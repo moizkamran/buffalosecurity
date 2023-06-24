@@ -1,0 +1,739 @@
+[debug] [2023-06-21T10:40:07.218Z] ----------------------------------------------------------------------
+[debug] [2023-06-21T10:40:07.224Z] Command:       /Users/zzz/.nvm/versions/node/v16.13.0/bin/node /Users/zzz/Documents/Web/Buffalo_Signup/node_modules/.bin/firebase deploy --only functions:api
+[debug] [2023-06-21T10:40:07.225Z] CLI Version:   12.4.0
+[debug] [2023-06-21T10:40:07.226Z] Platform:      darwin
+[debug] [2023-06-21T10:40:07.226Z] Node Version:  v16.13.0
+[debug] [2023-06-21T10:40:07.236Z] Time:          Wed Jun 21 2023 11:40:07 GMT+0100 (British Summer Time)
+[debug] [2023-06-21T10:40:07.236Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2023-06-21T10:40:07.344Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-06-21T10:40:07.344Z] > authorizing via signed-in user (antoine@buffalosecurityltd.com)
+[debug] [2023-06-21T10:40:07.345Z] [iam] checking project buffalosignup for permissions ["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]
+[debug] [2023-06-21T10:40:07.346Z] > refreshing access token with scopes: []
+[debug] [2023-06-21T10:40:07.349Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2023-06-21T10:40:07.349Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2023-06-21T10:40:07.597Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2023-06-21T10:40:07.598Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2023-06-21T10:40:07.768Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/buffalosignup:testIamPermissions [none]
+[debug] [2023-06-21T10:40:07.768Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/buffalosignup:testIamPermissions x-goog-quota-user=projects/buffalosignup
+[debug] [2023-06-21T10:40:07.768Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/buffalosignup:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]}
+[debug] [2023-06-21T10:40:08.481Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/buffalosignup:testIamPermissions 200
+[debug] [2023-06-21T10:40:08.482Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/buffalosignup:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]}
+[debug] [2023-06-21T10:40:08.483Z] >>> [apiv2][query] POST https://iam.googleapis.com/v1/projects/buffalosignup/serviceAccounts/buffalosignup@appspot.gserviceaccount.com:testIamPermissions [none]
+[debug] [2023-06-21T10:40:08.483Z] >>> [apiv2][body] POST https://iam.googleapis.com/v1/projects/buffalosignup/serviceAccounts/buffalosignup@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
+[debug] [2023-06-21T10:40:09.092Z] <<< [apiv2][status] POST https://iam.googleapis.com/v1/projects/buffalosignup/serviceAccounts/buffalosignup@appspot.gserviceaccount.com:testIamPermissions 200
+[debug] [2023-06-21T10:40:09.093Z] <<< [apiv2][body] POST https://iam.googleapis.com/v1/projects/buffalosignup/serviceAccounts/buffalosignup@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
+[info] 
+[info] === Deploying to 'buffalosignup'...
+[info] 
+[info] i  deploying functions 
+[debug] [2023-06-21T10:40:09.102Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/buffalosignup [none]
+[debug] [2023-06-21T10:40:09.315Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/buffalosignup 200
+[debug] [2023-06-21T10:40:09.316Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/buffalosignup {"projectId":"buffalosignup","projectNumber":"414488218320","displayName":"BuffaloSignup","name":"projects/buffalosignup","resources":{"hostingSite":"buffalosignup","realtimeDatabaseInstance":"buffalosignup-default-rtdb"},"state":"ACTIVE","etag":"1_566ec0a5-6373-4fd4-a048-edddeb731ee4"}
+[info] i  functions: preparing codebase default for deployment 
+[info] i  functions: ensuring required API cloudfunctions.googleapis.com is enabled... 
+[info] i  functions: ensuring required API cloudbuild.googleapis.com is enabled... 
+[info] i  artifactregistry: ensuring required API artifactregistry.googleapis.com is enabled... 
+[debug] [2023-06-21T10:40:09.320Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/buffalosignup/services/cloudfunctions.googleapis.com [none]
+[debug] [2023-06-21T10:40:09.320Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/buffalosignup/services/cloudfunctions.googleapis.com x-goog-quota-user=projects/buffalosignup
+[debug] [2023-06-21T10:40:09.322Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/buffalosignup/services/runtimeconfig.googleapis.com [none]
+[debug] [2023-06-21T10:40:09.322Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/buffalosignup/services/runtimeconfig.googleapis.com x-goog-quota-user=projects/buffalosignup
+[debug] [2023-06-21T10:40:09.325Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/buffalosignup/services/cloudbuild.googleapis.com [none]
+[debug] [2023-06-21T10:40:09.326Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/buffalosignup/services/cloudbuild.googleapis.com x-goog-quota-user=projects/buffalosignup
+[debug] [2023-06-21T10:40:09.328Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/buffalosignup/services/artifactregistry.googleapis.com [none]
+[debug] [2023-06-21T10:40:09.329Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/buffalosignup/services/artifactregistry.googleapis.com x-goog-quota-user=projects/buffalosignup
+[debug] [2023-06-21T10:40:10.121Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/buffalosignup/services/runtimeconfig.googleapis.com 200
+[debug] [2023-06-21T10:40:10.122Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/buffalosignup/services/runtimeconfig.googleapis.com [omitted]
+[debug] [2023-06-21T10:40:10.123Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/buffalosignup/services/cloudbuild.googleapis.com 200
+[debug] [2023-06-21T10:40:10.124Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/buffalosignup/services/cloudbuild.googleapis.com [omitted]
+[warn] ⚠  functions: missing required API cloudbuild.googleapis.com. Enabling now... 
+[debug] [2023-06-21T10:40:10.126Z] >>> [apiv2][query] POST https://serviceusage.googleapis.com/v1/projects/buffalosignup/services/cloudbuild.googleapis.com:enable [none]
+[debug] [2023-06-21T10:40:10.126Z] >>> [apiv2][(partial)header] POST https://serviceusage.googleapis.com/v1/projects/buffalosignup/services/cloudbuild.googleapis.com:enable x-goog-quota-user=projects/buffalosignup
+[debug] [2023-06-21T10:40:10.130Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/buffalosignup/services/artifactregistry.googleapis.com 200
+[debug] [2023-06-21T10:40:10.130Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/buffalosignup/services/artifactregistry.googleapis.com [omitted]
+[warn] ⚠  artifactregistry: missing required API artifactregistry.googleapis.com. Enabling now... 
+[debug] [2023-06-21T10:40:10.131Z] >>> [apiv2][query] POST https://serviceusage.googleapis.com/v1/projects/buffalosignup/services/artifactregistry.googleapis.com:enable [none]
+[debug] [2023-06-21T10:40:10.131Z] >>> [apiv2][(partial)header] POST https://serviceusage.googleapis.com/v1/projects/buffalosignup/services/artifactregistry.googleapis.com:enable x-goog-quota-user=projects/buffalosignup
+[debug] [2023-06-21T10:40:10.136Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/buffalosignup/services/cloudfunctions.googleapis.com 200
+[debug] [2023-06-21T10:40:10.136Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/buffalosignup/services/cloudfunctions.googleapis.com [omitted]
+[info] ✔  functions: required API cloudfunctions.googleapis.com is enabled 
+[debug] [2023-06-21T10:40:11.857Z] <<< [apiv2][status] POST https://serviceusage.googleapis.com/v1/projects/buffalosignup/services/artifactregistry.googleapis.com:enable 200
+[debug] [2023-06-21T10:40:11.858Z] <<< [apiv2][body] POST https://serviceusage.googleapis.com/v1/projects/buffalosignup/services/artifactregistry.googleapis.com:enable [omitted]
+[debug] [2023-06-21T10:40:11.859Z] <<< [apiv2][status] POST https://serviceusage.googleapis.com/v1/projects/buffalosignup/services/cloudbuild.googleapis.com:enable 200
+[debug] [2023-06-21T10:40:11.859Z] <<< [apiv2][body] POST https://serviceusage.googleapis.com/v1/projects/buffalosignup/services/cloudbuild.googleapis.com:enable [omitted]
+[debug] [2023-06-21T10:40:21.865Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/buffalosignup/services/artifactregistry.googleapis.com [none]
+[debug] [2023-06-21T10:40:21.866Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/buffalosignup/services/artifactregistry.googleapis.com x-goog-quota-user=projects/buffalosignup
+[debug] [2023-06-21T10:40:21.872Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/buffalosignup/services/cloudbuild.googleapis.com [none]
+[debug] [2023-06-21T10:40:21.873Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/buffalosignup/services/cloudbuild.googleapis.com x-goog-quota-user=projects/buffalosignup
+[debug] [2023-06-21T10:40:22.715Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/buffalosignup/services/artifactregistry.googleapis.com 200
+[debug] [2023-06-21T10:40:22.715Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/buffalosignup/services/artifactregistry.googleapis.com [omitted]
+[info] ✔  artifactregistry: required API artifactregistry.googleapis.com is enabled 
+[debug] [2023-06-21T10:40:22.724Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/buffalosignup/services/cloudbuild.googleapis.com 200
+[debug] [2023-06-21T10:40:22.724Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/buffalosignup/services/cloudbuild.googleapis.com [omitted]
+[info] ✔  functions: required API cloudbuild.googleapis.com is enabled 
+[debug] [2023-06-21T10:40:22.726Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/buffalosignup/adminSdkConfig [none]
+[debug] [2023-06-21T10:40:22.938Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/buffalosignup/adminSdkConfig 200
+[debug] [2023-06-21T10:40:22.939Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/buffalosignup/adminSdkConfig {"projectId":"buffalosignup","databaseURL":"https://buffalosignup-default-rtdb.firebaseio.com","storageBucket":"buffalosignup.appspot.com"}
+[debug] [2023-06-21T10:40:22.940Z] >>> [apiv2][query] GET https://runtimeconfig.googleapis.com/v1beta1/projects/buffalosignup/configs [none]
+[debug] [2023-06-21T10:40:23.221Z] <<< [apiv2][status] GET https://runtimeconfig.googleapis.com/v1beta1/projects/buffalosignup/configs 200
+[debug] [2023-06-21T10:40:23.221Z] <<< [apiv2][body] GET https://runtimeconfig.googleapis.com/v1beta1/projects/buffalosignup/configs {}
+[debug] [2023-06-21T10:40:23.225Z] Validating nodejs source
+[debug] [2023-06-21T10:40:24.141Z] > [functions] package.json contents: {
+  "name": "buffalo_signup",
+  "version": "1.0.0",
+  "main": "app.js",
+  "scripts": {
+    "test": "nodemon app.js",
+    "deploy": "firebase deploy --only functions:api"
+  },
+  "engines": {
+    "node": "18"
+  },
+  "keywords": [],
+  "author": "Antoine Hacheme",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "dotenv": "^16.1.4",
+    "ejs": "^3.1.9",
+    "express": "^4.18.2",
+    "firebase-admin": "^11.9.0",
+    "firebase-functions": "^4.4.1",
+    "firebase-tools": "^12.4.0",
+    "moment": "^2.29.4",
+    "node-cron": "^3.0.2",
+    "path": "^0.12.7",
+    "qrcode": "^1.5.3",
+    "twilio": "^4.11.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.22"
+  },
+  "description": ""
+}
+[debug] [2023-06-21T10:40:24.142Z] Building nodejs source
+[debug] [2023-06-21T10:40:24.143Z] Could not find functions.yaml. Must use http discovery
+[debug] [2023-06-21T10:40:24.155Z] Found firebase-functions binary at '/Users/zzz/Documents/Web/Buffalo_Signup/node_modules/.bin/firebase-functions'
+[debug] [2023-06-21T10:40:24.405Z] Serving at port 8810
+
+[debug] [2023-06-21T10:40:25.324Z] FetchError: request to http://localhost:8810/__/quitquitquit failed, reason: connect ECONNREFUSED 127.0.0.1:8810
+    at ClientRequest.<anonymous> (/Users/zzz/Documents/Web/Buffalo_Signup/node_modules/node-fetch/lib/index.js:1505:11)
+    at ClientRequest.emit (node:events:390:28)
+    at ClientRequest.emit (node:domain:475:12)
+    at Socket.socketErrorListener (node:_http_client:447:9)
+    at Socket.emit (node:events:390:28)
+    at Socket.emit (node:domain:475:12)
+    at emitErrorNT (node:internal/streams/destroy:157:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:122:3)
+    at processTicksAndRejections (node:internal/process/task_queues:83:21)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2023-06-21T10:40:55.498Z] ----------------------------------------------------------------------
+[debug] [2023-06-21T10:40:55.501Z] Command:       /Users/zzz/.nvm/versions/node/v16.13.0/bin/node /Users/zzz/Documents/Web/Buffalo_Signup/node_modules/.bin/firebase deploy --only functions:api
+[debug] [2023-06-21T10:40:55.501Z] CLI Version:   12.4.0
+[debug] [2023-06-21T10:40:55.502Z] Platform:      darwin
+[debug] [2023-06-21T10:40:55.502Z] Node Version:  v16.13.0
+[debug] [2023-06-21T10:40:55.503Z] Time:          Wed Jun 21 2023 11:40:55 GMT+0100 (British Summer Time)
+[debug] [2023-06-21T10:40:55.504Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2023-06-21T10:40:55.598Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-06-21T10:40:55.599Z] > authorizing via signed-in user (antoine@buffalosecurityltd.com)
+[debug] [2023-06-21T10:40:55.599Z] [iam] checking project buffalosignup for permissions ["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]
+[debug] [2023-06-21T10:40:55.603Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/buffalosignup:testIamPermissions [none]
+[debug] [2023-06-21T10:40:55.604Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/buffalosignup:testIamPermissions x-goog-quota-user=projects/buffalosignup
+[debug] [2023-06-21T10:40:55.604Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/buffalosignup:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]}
+[debug] [2023-06-21T10:40:55.853Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/buffalosignup:testIamPermissions 200
+[debug] [2023-06-21T10:40:55.853Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/buffalosignup:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]}
+[debug] [2023-06-21T10:40:55.853Z] >>> [apiv2][query] POST https://iam.googleapis.com/v1/projects/buffalosignup/serviceAccounts/buffalosignup@appspot.gserviceaccount.com:testIamPermissions [none]
+[debug] [2023-06-21T10:40:55.854Z] >>> [apiv2][body] POST https://iam.googleapis.com/v1/projects/buffalosignup/serviceAccounts/buffalosignup@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
+[debug] [2023-06-21T10:40:56.068Z] <<< [apiv2][status] POST https://iam.googleapis.com/v1/projects/buffalosignup/serviceAccounts/buffalosignup@appspot.gserviceaccount.com:testIamPermissions 200
+[debug] [2023-06-21T10:40:56.069Z] <<< [apiv2][body] POST https://iam.googleapis.com/v1/projects/buffalosignup/serviceAccounts/buffalosignup@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
+[info] 
+[info] === Deploying to 'buffalosignup'...
+[info] 
+[info] i  deploying functions 
+[debug] [2023-06-21T10:40:56.078Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/buffalosignup [none]
+[debug] [2023-06-21T10:40:56.283Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/buffalosignup 200
+[debug] [2023-06-21T10:40:56.283Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/buffalosignup {"projectId":"buffalosignup","projectNumber":"414488218320","displayName":"BuffaloSignup","name":"projects/buffalosignup","resources":{"hostingSite":"buffalosignup","realtimeDatabaseInstance":"buffalosignup-default-rtdb"},"state":"ACTIVE","etag":"1_566ec0a5-6373-4fd4-a048-edddeb731ee4"}
+[info] i  functions: preparing codebase default for deployment 
+[info] i  functions: ensuring required API cloudfunctions.googleapis.com is enabled... 
+[info] i  functions: ensuring required API cloudbuild.googleapis.com is enabled... 
+[info] i  artifactregistry: ensuring required API artifactregistry.googleapis.com is enabled... 
+[debug] [2023-06-21T10:40:56.289Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/buffalosignup/services/cloudfunctions.googleapis.com [none]
+[debug] [2023-06-21T10:40:56.289Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/buffalosignup/services/cloudfunctions.googleapis.com x-goog-quota-user=projects/buffalosignup
+[debug] [2023-06-21T10:40:56.291Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/buffalosignup/services/runtimeconfig.googleapis.com [none]
+[debug] [2023-06-21T10:40:56.291Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/buffalosignup/services/runtimeconfig.googleapis.com x-goog-quota-user=projects/buffalosignup
+[debug] [2023-06-21T10:40:56.294Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/buffalosignup/services/cloudbuild.googleapis.com [none]
+[debug] [2023-06-21T10:40:56.294Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/buffalosignup/services/cloudbuild.googleapis.com x-goog-quota-user=projects/buffalosignup
+[debug] [2023-06-21T10:40:56.296Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/buffalosignup/services/artifactregistry.googleapis.com [none]
+[debug] [2023-06-21T10:40:56.297Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/buffalosignup/services/artifactregistry.googleapis.com x-goog-quota-user=projects/buffalosignup
+[debug] [2023-06-21T10:40:57.128Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/buffalosignup/services/cloudbuild.googleapis.com 200
+[debug] [2023-06-21T10:40:57.128Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/buffalosignup/services/cloudbuild.googleapis.com [omitted]
+[info] ✔  functions: required API cloudbuild.googleapis.com is enabled 
+[debug] [2023-06-21T10:40:57.130Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/buffalosignup/services/artifactregistry.googleapis.com 200
+[debug] [2023-06-21T10:40:57.130Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/buffalosignup/services/artifactregistry.googleapis.com [omitted]
+[info] ✔  artifactregistry: required API artifactregistry.googleapis.com is enabled 
+[debug] [2023-06-21T10:40:57.131Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/buffalosignup/services/runtimeconfig.googleapis.com 200
+[debug] [2023-06-21T10:40:57.132Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/buffalosignup/services/runtimeconfig.googleapis.com [omitted]
+[debug] [2023-06-21T10:40:57.133Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/buffalosignup/services/cloudfunctions.googleapis.com 200
+[debug] [2023-06-21T10:40:57.133Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/buffalosignup/services/cloudfunctions.googleapis.com [omitted]
+[info] ✔  functions: required API cloudfunctions.googleapis.com is enabled 
+[debug] [2023-06-21T10:40:57.133Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/buffalosignup/adminSdkConfig [none]
+[debug] [2023-06-21T10:40:57.423Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/buffalosignup/adminSdkConfig 200
+[debug] [2023-06-21T10:40:57.424Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/buffalosignup/adminSdkConfig {"projectId":"buffalosignup","databaseURL":"https://buffalosignup-default-rtdb.firebaseio.com","storageBucket":"buffalosignup.appspot.com"}
+[debug] [2023-06-21T10:40:57.425Z] >>> [apiv2][query] GET https://runtimeconfig.googleapis.com/v1beta1/projects/buffalosignup/configs [none]
+[debug] [2023-06-21T10:40:57.620Z] <<< [apiv2][status] GET https://runtimeconfig.googleapis.com/v1beta1/projects/buffalosignup/configs 200
+[debug] [2023-06-21T10:40:57.620Z] <<< [apiv2][body] GET https://runtimeconfig.googleapis.com/v1beta1/projects/buffalosignup/configs {}
+[debug] [2023-06-21T10:40:57.624Z] Validating nodejs source
+[debug] [2023-06-21T10:40:58.272Z] > [functions] package.json contents: {
+  "name": "buffalo_signup",
+  "version": "1.0.0",
+  "main": "app.js",
+  "scripts": {
+    "test": "nodemon app.js",
+    "deploy": "firebase deploy --only functions:api"
+  },
+  "engines": {
+    "node": "18"
+  },
+  "keywords": [],
+  "author": "Antoine Hacheme",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "dotenv": "^16.1.4",
+    "ejs": "^3.1.9",
+    "express": "^4.18.2",
+    "firebase-admin": "^11.9.0",
+    "firebase-functions": "^4.4.1",
+    "firebase-tools": "^12.4.0",
+    "moment": "^2.29.4",
+    "node-cron": "^3.0.2",
+    "path": "^0.12.7",
+    "qrcode": "^1.5.3",
+    "twilio": "^4.11.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.22"
+  },
+  "description": ""
+}
+[debug] [2023-06-21T10:40:58.273Z] Building nodejs source
+[debug] [2023-06-21T10:40:58.274Z] Could not find functions.yaml. Must use http discovery
+[debug] [2023-06-21T10:40:58.284Z] Found firebase-functions binary at '/Users/zzz/Documents/Web/Buffalo_Signup/node_modules/.bin/firebase-functions'
+[debug] [2023-06-21T10:40:58.532Z] Serving at port 8964
+
+[debug] [2023-06-21T10:40:59.397Z] FetchError: request to http://localhost:8964/__/quitquitquit failed, reason: connect ECONNREFUSED 127.0.0.1:8964
+    at ClientRequest.<anonymous> (/Users/zzz/Documents/Web/Buffalo_Signup/node_modules/node-fetch/lib/index.js:1505:11)
+    at ClientRequest.emit (node:events:390:28)
+    at ClientRequest.emit (node:domain:475:12)
+    at Socket.socketErrorListener (node:_http_client:447:9)
+    at Socket.emit (node:events:390:28)
+    at Socket.emit (node:domain:475:12)
+    at emitErrorNT (node:internal/streams/destroy:157:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:122:3)
+    at processTicksAndRejections (node:internal/process/task_queues:83:21)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2023-06-21T10:41:30.991Z] ----------------------------------------------------------------------
+[debug] [2023-06-21T10:41:30.993Z] Command:       /Users/zzz/.nvm/versions/node/v16.13.0/bin/node /Users/zzz/Documents/Web/Buffalo_Signup/node_modules/.bin/firebase deploy --only functions:api
+[debug] [2023-06-21T10:41:30.994Z] CLI Version:   12.4.0
+[debug] [2023-06-21T10:41:30.994Z] Platform:      darwin
+[debug] [2023-06-21T10:41:30.995Z] Node Version:  v16.13.0
+[debug] [2023-06-21T10:41:30.996Z] Time:          Wed Jun 21 2023 11:41:30 GMT+0100 (British Summer Time)
+[debug] [2023-06-21T10:41:30.996Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2023-06-21T10:41:31.080Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-06-21T10:41:31.081Z] > authorizing via signed-in user (antoine@buffalosecurityltd.com)
+[debug] [2023-06-21T10:41:31.081Z] [iam] checking project buffalosignup for permissions ["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]
+[debug] [2023-06-21T10:41:31.084Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/buffalosignup:testIamPermissions [none]
+[debug] [2023-06-21T10:41:31.084Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/buffalosignup:testIamPermissions x-goog-quota-user=projects/buffalosignup
+[debug] [2023-06-21T10:41:31.085Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/buffalosignup:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]}
+[debug] [2023-06-21T10:41:31.292Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/buffalosignup:testIamPermissions 200
+[debug] [2023-06-21T10:41:31.292Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/buffalosignup:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]}
+[debug] [2023-06-21T10:41:31.293Z] >>> [apiv2][query] POST https://iam.googleapis.com/v1/projects/buffalosignup/serviceAccounts/buffalosignup@appspot.gserviceaccount.com:testIamPermissions [none]
+[debug] [2023-06-21T10:41:31.293Z] >>> [apiv2][body] POST https://iam.googleapis.com/v1/projects/buffalosignup/serviceAccounts/buffalosignup@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
+[debug] [2023-06-21T10:41:31.934Z] <<< [apiv2][status] POST https://iam.googleapis.com/v1/projects/buffalosignup/serviceAccounts/buffalosignup@appspot.gserviceaccount.com:testIamPermissions 200
+[debug] [2023-06-21T10:41:31.934Z] <<< [apiv2][body] POST https://iam.googleapis.com/v1/projects/buffalosignup/serviceAccounts/buffalosignup@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
+[info] 
+[info] === Deploying to 'buffalosignup'...
+[info] 
+[info] i  deploying functions 
+[debug] [2023-06-21T10:41:31.942Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/buffalosignup [none]
+[debug] [2023-06-21T10:41:32.128Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/buffalosignup 200
+[debug] [2023-06-21T10:41:32.128Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/buffalosignup {"projectId":"buffalosignup","projectNumber":"414488218320","displayName":"BuffaloSignup","name":"projects/buffalosignup","resources":{"hostingSite":"buffalosignup","realtimeDatabaseInstance":"buffalosignup-default-rtdb"},"state":"ACTIVE","etag":"1_566ec0a5-6373-4fd4-a048-edddeb731ee4"}
+[info] i  functions: preparing codebase default for deployment 
+[info] i  functions: ensuring required API cloudfunctions.googleapis.com is enabled... 
+[info] i  functions: ensuring required API cloudbuild.googleapis.com is enabled... 
+[info] i  artifactregistry: ensuring required API artifactregistry.googleapis.com is enabled... 
+[debug] [2023-06-21T10:41:32.134Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/buffalosignup/services/cloudfunctions.googleapis.com [none]
+[debug] [2023-06-21T10:41:32.134Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/buffalosignup/services/cloudfunctions.googleapis.com x-goog-quota-user=projects/buffalosignup
+[debug] [2023-06-21T10:41:32.136Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/buffalosignup/services/runtimeconfig.googleapis.com [none]
+[debug] [2023-06-21T10:41:32.136Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/buffalosignup/services/runtimeconfig.googleapis.com x-goog-quota-user=projects/buffalosignup
+[debug] [2023-06-21T10:41:32.139Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/buffalosignup/services/cloudbuild.googleapis.com [none]
+[debug] [2023-06-21T10:41:32.139Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/buffalosignup/services/cloudbuild.googleapis.com x-goog-quota-user=projects/buffalosignup
+[debug] [2023-06-21T10:41:32.141Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/buffalosignup/services/artifactregistry.googleapis.com [none]
+[debug] [2023-06-21T10:41:32.141Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/buffalosignup/services/artifactregistry.googleapis.com x-goog-quota-user=projects/buffalosignup
+[debug] [2023-06-21T10:41:32.966Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/buffalosignup/services/artifactregistry.googleapis.com 200
+[debug] [2023-06-21T10:41:32.967Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/buffalosignup/services/artifactregistry.googleapis.com [omitted]
+[info] ✔  artifactregistry: required API artifactregistry.googleapis.com is enabled 
+[debug] [2023-06-21T10:41:32.968Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/buffalosignup/services/runtimeconfig.googleapis.com 200
+[debug] [2023-06-21T10:41:32.968Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/buffalosignup/services/runtimeconfig.googleapis.com [omitted]
+[debug] [2023-06-21T10:41:32.969Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/buffalosignup/services/cloudbuild.googleapis.com 200
+[debug] [2023-06-21T10:41:32.970Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/buffalosignup/services/cloudbuild.googleapis.com [omitted]
+[info] ✔  functions: required API cloudbuild.googleapis.com is enabled 
+[debug] [2023-06-21T10:41:32.971Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/buffalosignup/services/cloudfunctions.googleapis.com 200
+[debug] [2023-06-21T10:41:32.971Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/buffalosignup/services/cloudfunctions.googleapis.com [omitted]
+[info] ✔  functions: required API cloudfunctions.googleapis.com is enabled 
+[debug] [2023-06-21T10:41:32.971Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/buffalosignup/adminSdkConfig [none]
+[debug] [2023-06-21T10:41:33.179Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/buffalosignup/adminSdkConfig 200
+[debug] [2023-06-21T10:41:33.180Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/buffalosignup/adminSdkConfig {"projectId":"buffalosignup","databaseURL":"https://buffalosignup-default-rtdb.firebaseio.com","storageBucket":"buffalosignup.appspot.com"}
+[debug] [2023-06-21T10:41:33.181Z] >>> [apiv2][query] GET https://runtimeconfig.googleapis.com/v1beta1/projects/buffalosignup/configs [none]
+[debug] [2023-06-21T10:41:33.374Z] <<< [apiv2][status] GET https://runtimeconfig.googleapis.com/v1beta1/projects/buffalosignup/configs 200
+[debug] [2023-06-21T10:41:33.375Z] <<< [apiv2][body] GET https://runtimeconfig.googleapis.com/v1beta1/projects/buffalosignup/configs {}
+[debug] [2023-06-21T10:41:33.378Z] Validating nodejs source
+[debug] [2023-06-21T10:41:34.077Z] > [functions] package.json contents: {
+  "name": "buffalo_signup",
+  "version": "1.0.0",
+  "main": "app.js",
+  "scripts": {
+    "test": "nodemon app.js",
+    "deploy": "firebase deploy --only functions:api"
+  },
+  "engines": {
+    "node": "18"
+  },
+  "keywords": [],
+  "author": "Antoine Hacheme",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "dotenv": "^16.1.4",
+    "ejs": "^3.1.9",
+    "express": "^4.18.2",
+    "firebase-admin": "^11.9.0",
+    "firebase-functions": "^4.4.1",
+    "firebase-tools": "^12.4.0",
+    "moment": "^2.29.4",
+    "node-cron": "^3.0.2",
+    "path": "^0.12.7",
+    "qrcode": "^1.5.3",
+    "twilio": "^4.11.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.22"
+  },
+  "description": ""
+}
+[debug] [2023-06-21T10:41:34.077Z] Building nodejs source
+[debug] [2023-06-21T10:41:34.079Z] Could not find functions.yaml. Must use http discovery
+[debug] [2023-06-21T10:41:34.090Z] Found firebase-functions binary at '/Users/zzz/Documents/Web/Buffalo_Signup/node_modules/.bin/firebase-functions'
+[debug] [2023-06-21T10:41:34.329Z] Serving at port 8299
+
+[debug] [2023-06-21T10:41:35.118Z] FetchError: request to http://localhost:8299/__/quitquitquit failed, reason: connect ECONNREFUSED 127.0.0.1:8299
+    at ClientRequest.<anonymous> (/Users/zzz/Documents/Web/Buffalo_Signup/node_modules/node-fetch/lib/index.js:1505:11)
+    at ClientRequest.emit (node:events:390:28)
+    at ClientRequest.emit (node:domain:475:12)
+    at Socket.socketErrorListener (node:_http_client:447:9)
+    at Socket.emit (node:events:390:28)
+    at Socket.emit (node:domain:475:12)
+    at emitErrorNT (node:internal/streams/destroy:157:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:122:3)
+    at processTicksAndRejections (node:internal/process/task_queues:83:21)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2023-06-21T10:42:26.759Z] ----------------------------------------------------------------------
+[debug] [2023-06-21T10:42:26.761Z] Command:       /Users/zzz/.nvm/versions/node/v16.13.0/bin/node /Users/zzz/.nvm/versions/node/v16.13.0/bin/firebase deploy
+[debug] [2023-06-21T10:42:26.762Z] CLI Version:   12.4.0
+[debug] [2023-06-21T10:42:26.762Z] Platform:      darwin
+[debug] [2023-06-21T10:42:26.763Z] Node Version:  v16.13.0
+[debug] [2023-06-21T10:42:26.768Z] Time:          Wed Jun 21 2023 11:42:26 GMT+0100 (British Summer Time)
+[debug] [2023-06-21T10:42:26.769Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2023-06-21T10:42:26.859Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-06-21T10:42:26.859Z] > authorizing via signed-in user (antoine@buffalosecurityltd.com)
+[debug] [2023-06-21T10:42:26.860Z] [iam] checking project buffalosignup for permissions ["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]
+[debug] [2023-06-21T10:42:26.867Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/buffalosignup:testIamPermissions [none]
+[debug] [2023-06-21T10:42:26.867Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/buffalosignup:testIamPermissions x-goog-quota-user=projects/buffalosignup
+[debug] [2023-06-21T10:42:26.868Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/buffalosignup:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]}
+[debug] [2023-06-21T10:42:27.090Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/buffalosignup:testIamPermissions 200
+[debug] [2023-06-21T10:42:27.090Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/buffalosignup:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]}
+[debug] [2023-06-21T10:42:27.091Z] >>> [apiv2][query] POST https://iam.googleapis.com/v1/projects/buffalosignup/serviceAccounts/buffalosignup@appspot.gserviceaccount.com:testIamPermissions [none]
+[debug] [2023-06-21T10:42:27.091Z] >>> [apiv2][body] POST https://iam.googleapis.com/v1/projects/buffalosignup/serviceAccounts/buffalosignup@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
+[debug] [2023-06-21T10:42:27.624Z] <<< [apiv2][status] POST https://iam.googleapis.com/v1/projects/buffalosignup/serviceAccounts/buffalosignup@appspot.gserviceaccount.com:testIamPermissions 200
+[debug] [2023-06-21T10:42:27.625Z] <<< [apiv2][body] POST https://iam.googleapis.com/v1/projects/buffalosignup/serviceAccounts/buffalosignup@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
+[info] 
+[info] === Deploying to 'buffalosignup'...
+[info] 
+[info] i  deploying functions 
+[debug] [2023-06-21T10:42:27.632Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/buffalosignup [none]
+[debug] [2023-06-21T10:42:27.947Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/buffalosignup 200
+[debug] [2023-06-21T10:42:27.948Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/buffalosignup {"projectId":"buffalosignup","projectNumber":"414488218320","displayName":"BuffaloSignup","name":"projects/buffalosignup","resources":{"hostingSite":"buffalosignup","realtimeDatabaseInstance":"buffalosignup-default-rtdb"},"state":"ACTIVE","etag":"1_566ec0a5-6373-4fd4-a048-edddeb731ee4"}
+[info] i  functions: preparing codebase default for deployment 
+[info] i  functions: ensuring required API cloudfunctions.googleapis.com is enabled... 
+[info] i  functions: ensuring required API cloudbuild.googleapis.com is enabled... 
+[info] i  artifactregistry: ensuring required API artifactregistry.googleapis.com is enabled... 
+[debug] [2023-06-21T10:42:27.953Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/buffalosignup/services/cloudfunctions.googleapis.com [none]
+[debug] [2023-06-21T10:42:27.953Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/buffalosignup/services/cloudfunctions.googleapis.com x-goog-quota-user=projects/buffalosignup
+[debug] [2023-06-21T10:42:27.956Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/buffalosignup/services/runtimeconfig.googleapis.com [none]
+[debug] [2023-06-21T10:42:27.956Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/buffalosignup/services/runtimeconfig.googleapis.com x-goog-quota-user=projects/buffalosignup
+[debug] [2023-06-21T10:42:27.959Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/buffalosignup/services/cloudbuild.googleapis.com [none]
+[debug] [2023-06-21T10:42:27.959Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/buffalosignup/services/cloudbuild.googleapis.com x-goog-quota-user=projects/buffalosignup
+[debug] [2023-06-21T10:42:27.961Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/buffalosignup/services/artifactregistry.googleapis.com [none]
+[debug] [2023-06-21T10:42:27.961Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/buffalosignup/services/artifactregistry.googleapis.com x-goog-quota-user=projects/buffalosignup
+[debug] [2023-06-21T10:42:28.728Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/buffalosignup/services/artifactregistry.googleapis.com 200
+[debug] [2023-06-21T10:42:28.728Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/buffalosignup/services/artifactregistry.googleapis.com [omitted]
+[info] ✔  artifactregistry: required API artifactregistry.googleapis.com is enabled 
+[debug] [2023-06-21T10:42:28.731Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/buffalosignup/services/cloudbuild.googleapis.com 200
+[debug] [2023-06-21T10:42:28.731Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/buffalosignup/services/cloudbuild.googleapis.com [omitted]
+[info] ✔  functions: required API cloudbuild.googleapis.com is enabled 
+[debug] [2023-06-21T10:42:28.759Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/buffalosignup/services/runtimeconfig.googleapis.com 200
+[debug] [2023-06-21T10:42:28.759Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/buffalosignup/services/runtimeconfig.googleapis.com [omitted]
+[debug] [2023-06-21T10:42:28.769Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/buffalosignup/services/cloudfunctions.googleapis.com 200
+[debug] [2023-06-21T10:42:28.770Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/buffalosignup/services/cloudfunctions.googleapis.com [omitted]
+[info] ✔  functions: required API cloudfunctions.googleapis.com is enabled 
+[debug] [2023-06-21T10:42:28.771Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/buffalosignup/adminSdkConfig [none]
+[debug] [2023-06-21T10:42:29.073Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/buffalosignup/adminSdkConfig 200
+[debug] [2023-06-21T10:42:29.073Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/buffalosignup/adminSdkConfig {"projectId":"buffalosignup","databaseURL":"https://buffalosignup-default-rtdb.firebaseio.com","storageBucket":"buffalosignup.appspot.com"}
+[debug] [2023-06-21T10:42:29.074Z] >>> [apiv2][query] GET https://runtimeconfig.googleapis.com/v1beta1/projects/buffalosignup/configs [none]
+[debug] [2023-06-21T10:42:29.344Z] <<< [apiv2][status] GET https://runtimeconfig.googleapis.com/v1beta1/projects/buffalosignup/configs 200
+[debug] [2023-06-21T10:42:29.345Z] <<< [apiv2][body] GET https://runtimeconfig.googleapis.com/v1beta1/projects/buffalosignup/configs {}
+[debug] [2023-06-21T10:42:29.349Z] Validating nodejs source
+[debug] [2023-06-21T10:42:30.542Z] > [functions] package.json contents: {
+  "name": "buffalo_signup",
+  "version": "1.0.0",
+  "main": "app.js",
+  "scripts": {
+    "test": "nodemon app.js",
+    "deploy": "firebase deploy --only functions:api"
+  },
+  "engines": {
+    "node": "18"
+  },
+  "keywords": [],
+  "author": "Antoine Hacheme",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "dotenv": "^16.1.4",
+    "ejs": "^3.1.9",
+    "express": "^4.18.2",
+    "firebase-admin": "^11.9.0",
+    "firebase-functions": "^4.4.1",
+    "firebase-tools": "^12.4.0",
+    "moment": "^2.29.4",
+    "node-cron": "^3.0.2",
+    "path": "^0.12.7",
+    "qrcode": "^1.5.3",
+    "twilio": "^4.11.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.22"
+  },
+  "description": ""
+}
+[debug] [2023-06-21T10:42:30.542Z] Building nodejs source
+[debug] [2023-06-21T10:42:30.545Z] Could not find functions.yaml. Must use http discovery
+[debug] [2023-06-21T10:42:30.555Z] Found firebase-functions binary at '/Users/zzz/Documents/Web/Buffalo_Signup/node_modules/.bin/firebase-functions'
+[debug] [2023-06-21T10:42:30.884Z] Serving at port 8960
+
+[debug] [2023-06-21T10:42:32.976Z] FetchError: request to http://localhost:8960/__/quitquitquit failed, reason: connect ECONNREFUSED 127.0.0.1:8960
+    at ClientRequest.<anonymous> (/Users/zzz/.nvm/versions/node/v16.13.0/lib/node_modules/firebase-tools/node_modules/node-fetch/lib/index.js:1505:11)
+    at ClientRequest.emit (node:events:390:28)
+    at ClientRequest.emit (node:domain:475:12)
+    at Socket.socketErrorListener (node:_http_client:447:9)
+    at Socket.emit (node:events:390:28)
+    at Socket.emit (node:domain:475:12)
+    at emitErrorNT (node:internal/streams/destroy:157:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:122:3)
+    at processTicksAndRejections (node:internal/process/task_queues:83:21)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2023-06-21T10:43:50.880Z] ----------------------------------------------------------------------
+[debug] [2023-06-21T10:43:50.883Z] Command:       /Users/zzz/.nvm/versions/node/v16.13.0/bin/node /Users/zzz/Documents/Web/Buffalo_Signup/node_modules/.bin/firebase deploy --only functions:api
+[debug] [2023-06-21T10:43:50.884Z] CLI Version:   12.4.0
+[debug] [2023-06-21T10:43:50.884Z] Platform:      darwin
+[debug] [2023-06-21T10:43:50.885Z] Node Version:  v16.13.0
+[debug] [2023-06-21T10:43:50.890Z] Time:          Wed Jun 21 2023 11:43:50 GMT+0100 (British Summer Time)
+[debug] [2023-06-21T10:43:50.890Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2023-06-21T10:43:50.982Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-06-21T10:43:50.983Z] > authorizing via signed-in user (antoine@buffalosecurityltd.com)
+[debug] [2023-06-21T10:43:50.983Z] [iam] checking project buffalosignup for permissions ["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]
+[debug] [2023-06-21T10:43:50.986Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/buffalosignup:testIamPermissions [none]
+[debug] [2023-06-21T10:43:50.986Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/buffalosignup:testIamPermissions x-goog-quota-user=projects/buffalosignup
+[debug] [2023-06-21T10:43:50.986Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/buffalosignup:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]}
+[debug] [2023-06-21T10:43:51.725Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/buffalosignup:testIamPermissions 200
+[debug] [2023-06-21T10:43:51.725Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/buffalosignup:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]}
+[debug] [2023-06-21T10:43:51.726Z] >>> [apiv2][query] POST https://iam.googleapis.com/v1/projects/buffalosignup/serviceAccounts/buffalosignup@appspot.gserviceaccount.com:testIamPermissions [none]
+[debug] [2023-06-21T10:43:51.726Z] >>> [apiv2][body] POST https://iam.googleapis.com/v1/projects/buffalosignup/serviceAccounts/buffalosignup@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
+[debug] [2023-06-21T10:43:52.326Z] <<< [apiv2][status] POST https://iam.googleapis.com/v1/projects/buffalosignup/serviceAccounts/buffalosignup@appspot.gserviceaccount.com:testIamPermissions 200
+[debug] [2023-06-21T10:43:52.327Z] <<< [apiv2][body] POST https://iam.googleapis.com/v1/projects/buffalosignup/serviceAccounts/buffalosignup@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
+[info] 
+[info] === Deploying to 'buffalosignup'...
+[info] 
+[info] i  deploying functions 
+[debug] [2023-06-21T10:43:52.335Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/buffalosignup [none]
+[debug] [2023-06-21T10:43:52.641Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/buffalosignup 200
+[debug] [2023-06-21T10:43:52.641Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/buffalosignup {"projectId":"buffalosignup","projectNumber":"414488218320","displayName":"BuffaloSignup","name":"projects/buffalosignup","resources":{"hostingSite":"buffalosignup","realtimeDatabaseInstance":"buffalosignup-default-rtdb"},"state":"ACTIVE","etag":"1_566ec0a5-6373-4fd4-a048-edddeb731ee4"}
+[info] i  functions: preparing codebase default for deployment 
+[info] i  functions: ensuring required API cloudfunctions.googleapis.com is enabled... 
+[info] i  functions: ensuring required API cloudbuild.googleapis.com is enabled... 
+[info] i  artifactregistry: ensuring required API artifactregistry.googleapis.com is enabled... 
+[debug] [2023-06-21T10:43:52.646Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/buffalosignup/services/cloudfunctions.googleapis.com [none]
+[debug] [2023-06-21T10:43:52.646Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/buffalosignup/services/cloudfunctions.googleapis.com x-goog-quota-user=projects/buffalosignup
+[debug] [2023-06-21T10:43:52.649Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/buffalosignup/services/runtimeconfig.googleapis.com [none]
+[debug] [2023-06-21T10:43:52.649Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/buffalosignup/services/runtimeconfig.googleapis.com x-goog-quota-user=projects/buffalosignup
+[debug] [2023-06-21T10:43:52.652Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/buffalosignup/services/cloudbuild.googleapis.com [none]
+[debug] [2023-06-21T10:43:52.652Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/buffalosignup/services/cloudbuild.googleapis.com x-goog-quota-user=projects/buffalosignup
+[debug] [2023-06-21T10:43:52.655Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/buffalosignup/services/artifactregistry.googleapis.com [none]
+[debug] [2023-06-21T10:43:52.655Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/buffalosignup/services/artifactregistry.googleapis.com x-goog-quota-user=projects/buffalosignup
+[debug] [2023-06-21T10:43:53.447Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/buffalosignup/services/runtimeconfig.googleapis.com 200
+[debug] [2023-06-21T10:43:53.447Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/buffalosignup/services/runtimeconfig.googleapis.com [omitted]
+[debug] [2023-06-21T10:43:53.449Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/buffalosignup/services/cloudbuild.googleapis.com 200
+[debug] [2023-06-21T10:43:53.449Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/buffalosignup/services/cloudbuild.googleapis.com [omitted]
+[info] ✔  functions: required API cloudbuild.googleapis.com is enabled 
+[debug] [2023-06-21T10:43:53.496Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/buffalosignup/services/artifactregistry.googleapis.com 200
+[debug] [2023-06-21T10:43:53.496Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/buffalosignup/services/artifactregistry.googleapis.com [omitted]
+[info] ✔  artifactregistry: required API artifactregistry.googleapis.com is enabled 
+[debug] [2023-06-21T10:43:53.503Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/buffalosignup/services/cloudfunctions.googleapis.com 200
+[debug] [2023-06-21T10:43:53.503Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/buffalosignup/services/cloudfunctions.googleapis.com [omitted]
+[info] ✔  functions: required API cloudfunctions.googleapis.com is enabled 
+[debug] [2023-06-21T10:43:53.504Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/buffalosignup/adminSdkConfig [none]
+[debug] [2023-06-21T10:43:53.725Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/buffalosignup/adminSdkConfig 200
+[debug] [2023-06-21T10:43:53.725Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/buffalosignup/adminSdkConfig {"projectId":"buffalosignup","databaseURL":"https://buffalosignup-default-rtdb.firebaseio.com","storageBucket":"buffalosignup.appspot.com"}
+[debug] [2023-06-21T10:43:53.726Z] >>> [apiv2][query] GET https://runtimeconfig.googleapis.com/v1beta1/projects/buffalosignup/configs [none]
+[debug] [2023-06-21T10:43:53.903Z] <<< [apiv2][status] GET https://runtimeconfig.googleapis.com/v1beta1/projects/buffalosignup/configs 200
+[debug] [2023-06-21T10:43:53.903Z] <<< [apiv2][body] GET https://runtimeconfig.googleapis.com/v1beta1/projects/buffalosignup/configs {}
+[debug] [2023-06-21T10:43:53.907Z] Validating nodejs source
+[debug] [2023-06-21T10:43:54.590Z] > [functions] package.json contents: {
+  "name": "buffalo_signup",
+  "version": "1.0.0",
+  "main": "app.js",
+  "scripts": {
+    "test": "nodemon app.js",
+    "deploy": "firebase deploy --only functions:api"
+  },
+  "engines": {
+    "node": "18"
+  },
+  "keywords": [],
+  "author": "Antoine Hacheme",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "dotenv": "^16.1.4",
+    "ejs": "^3.1.9",
+    "express": "^4.18.2",
+    "firebase-admin": "^11.9.0",
+    "firebase-functions": "^4.4.1",
+    "firebase-tools": "^12.4.0",
+    "moment": "^2.29.4",
+    "node-cron": "^3.0.2",
+    "path": "^0.12.7",
+    "qrcode": "^1.5.3",
+    "twilio": "^4.11.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.22"
+  },
+  "description": ""
+}
+[debug] [2023-06-21T10:43:54.590Z] Building nodejs source
+[debug] [2023-06-21T10:43:54.592Z] Could not find functions.yaml. Must use http discovery
+[debug] [2023-06-21T10:43:54.602Z] Found firebase-functions binary at '/Users/zzz/Documents/Web/Buffalo_Signup/node_modules/.bin/firebase-functions'
+[debug] [2023-06-21T10:43:54.858Z] Serving at port 8581
+
+[debug] [2023-06-21T10:43:55.633Z] Server is running on port 3000
+
+[debug] [2023-06-21T10:43:55.639Z] Got response from /__/functions.yaml {"endpoints":{"api":{"platform":"gcfv1","availableMemoryMb":null,"timeoutSeconds":null,"minInstances":null,"maxInstances":null,"ingressSettings":null,"serviceAccountEmail":null,"vpc":null,"httpsTrigger":{},"entryPoint":"api"}},"specVersion":"v1alpha1","requiredAPIs":[]}
+[debug] [2023-06-21T10:43:55.648Z] shutdown requested via /__/quitquitquit
+
+[info] i  functions: Loaded environment variables from .env. 
+[info] i  functions: preparing . directory for uploading... 
+[info] i  functions: packaged /Users/zzz/Documents/Web/Buffalo_Signup (299.36 KB) for uploading 
+[debug] [2023-06-21T10:44:05.803Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v1/projects/buffalosignup/locations/-/functions [none]
+[debug] [2023-06-21T10:44:06.355Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v1/projects/buffalosignup/locations/-/functions 200
+[debug] [2023-06-21T10:44:06.355Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v1/projects/buffalosignup/locations/-/functions {}
+[debug] [2023-06-21T10:44:06.358Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v2/projects/buffalosignup/locations/-/functions filter=environment%3D%22GEN_2%22
+[debug] [2023-06-21T10:44:06.865Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v2/projects/buffalosignup/locations/-/functions 200
+[debug] [2023-06-21T10:44:06.866Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v2/projects/buffalosignup/locations/-/functions {}
+[debug] [2023-06-21T10:44:06.878Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/buffalosignup [none]
+[debug] [2023-06-21T10:44:07.044Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/buffalosignup 200
+[debug] [2023-06-21T10:44:07.044Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/buffalosignup {"projectId":"buffalosignup","projectNumber":"414488218320","displayName":"BuffaloSignup","name":"projects/buffalosignup","resources":{"hostingSite":"buffalosignup","realtimeDatabaseInstance":"buffalosignup-default-rtdb"},"state":"ACTIVE","etag":"1_566ec0a5-6373-4fd4-a048-edddeb731ee4"}
+[debug] [2023-06-21T10:44:07.047Z] [functions] found 1 new HTTP functions, testing setIamPolicy permission...
+[debug] [2023-06-21T10:44:07.047Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/buffalosignup:testIamPermissions [none]
+[debug] [2023-06-21T10:44:07.047Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/buffalosignup:testIamPermissions x-goog-quota-user=projects/buffalosignup
+[debug] [2023-06-21T10:44:07.048Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/buffalosignup:testIamPermissions {"permissions":["cloudfunctions.functions.setIamPolicy"]}
+[debug] [2023-06-21T10:44:07.684Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/buffalosignup:testIamPermissions 200
+[debug] [2023-06-21T10:44:07.685Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/buffalosignup:testIamPermissions {"permissions":["cloudfunctions.functions.setIamPolicy"]}
+[debug] [2023-06-21T10:44:07.685Z] [functions] found setIamPolicy permission, proceeding with deploy
+[debug] [2023-06-21T10:44:07.686Z] >>> [apiv2][query] POST https://cloudfunctions.googleapis.com/v1/projects/buffalosignup/locations/us-central1/functions:generateUploadUrl [none]
+[debug] [2023-06-21T10:44:07.686Z] >>> [apiv2][body] POST https://cloudfunctions.googleapis.com/v1/projects/buffalosignup/locations/us-central1/functions:generateUploadUrl {}
+[debug] [2023-06-21T10:44:15.057Z] <<< [apiv2][status] POST https://cloudfunctions.googleapis.com/v1/projects/buffalosignup/locations/us-central1/functions:generateUploadUrl 200
+[debug] [2023-06-21T10:44:15.057Z] <<< [apiv2][body] POST https://cloudfunctions.googleapis.com/v1/projects/buffalosignup/locations/us-central1/functions:generateUploadUrl {"uploadUrl":"https://storage.googleapis.com/uploads-532560304784.us-central1.cloudfunctions.appspot.com/29a7379e-c565-4d97-952a-05ce4299b82b.zip?GoogleAccessId=service-414488218320@gcf-admin-robot.iam.gserviceaccount.com&Expires=1687346054&Signature=Ku9ta%2FLvILigkqZzpbzyIbhboqTj%2BFWQCr%2BHcEh%2BcSNSnQPQU1ECJy5Kg9LN5d2Ei7yg7V02ZnfMy08blkDRct47yukR2IYXFwmBoH2IVT35QAp9GLr3uLMyn1K9UJSUw%2Bj0eptWlCZJ7sCgDaVD6MF2ETNaIDj9MUcC9oc%2FtvsQN%2B%2BV2phn9IISezlWCr6KzDVc7lKRLT6w261OEzUntFpGdVws4RG9btAe4ZbSSuS9gsvdX9X7vKZTZo%2Fbg%2BUjJwaF2WhwbTrVZu%2BWPj%2F1QEJfVFhM5KDOr1rcoqh4XXbdMCFwo%2Bb7SnvKZ843jvLz%2B%2FqQnwLw%2B3inVomPpmLwPA%3D%3D"}
+[debug] [2023-06-21T10:44:15.059Z] >>> [apiv2][query] PUT https://storage.googleapis.com/uploads-532560304784.us-central1.cloudfunctions.appspot.com/29a7379e-c565-4d97-952a-05ce4299b82b.zip GoogleAccessId=service-414488218320%40gcf-admin-robot.iam.gserviceaccount.com&Expires=1687346054&Signature=Ku9ta%2FLvILigkqZzpbzyIbhboqTj%2BFWQCr%2BHcEh%2BcSNSnQPQU1ECJy5Kg9LN5d2Ei7yg7V02ZnfMy08blkDRct47yukR2IYXFwmBoH2IVT35QAp9GLr3uLMyn1K9UJSUw%2Bj0eptWlCZJ7sCgDaVD6MF2ETNaIDj9MUcC9oc%2FtvsQN%2B%2BV2phn9IISezlWCr6KzDVc7lKRLT6w261OEzUntFpGdVws4RG9btAe4ZbSSuS9gsvdX9X7vKZTZo%2Fbg%2BUjJwaF2WhwbTrVZu%2BWPj%2F1QEJfVFhM5KDOr1rcoqh4XXbdMCFwo%2Bb7SnvKZ843jvLz%2B%2FqQnwLw%2B3inVomPpmLwPA%3D%3D
+[debug] [2023-06-21T10:44:15.059Z] >>> [apiv2][body] PUT https://storage.googleapis.com/uploads-532560304784.us-central1.cloudfunctions.appspot.com/29a7379e-c565-4d97-952a-05ce4299b82b.zip [stream]
+[debug] [2023-06-21T10:44:15.874Z] <<< [apiv2][status] PUT https://storage.googleapis.com/uploads-532560304784.us-central1.cloudfunctions.appspot.com/29a7379e-c565-4d97-952a-05ce4299b82b.zip 200
+[debug] [2023-06-21T10:44:15.875Z] <<< [apiv2][body] PUT https://storage.googleapis.com/uploads-532560304784.us-central1.cloudfunctions.appspot.com/29a7379e-c565-4d97-952a-05ce4299b82b.zip [omitted]
+[info] ✔  functions: . folder uploaded successfully 
+[info] i  functions: creating Node.js 18 (1st Gen) function api(us-central1)... 
+[debug] [2023-06-21T10:44:15.884Z] >>> [apiv2][query] POST https://cloudfunctions.googleapis.com/v1/projects/buffalosignup/locations/us-central1/functions [none]
+[debug] [2023-06-21T10:44:15.884Z] >>> [apiv2][body] POST https://cloudfunctions.googleapis.com/v1/projects/buffalosignup/locations/us-central1/functions {"name":"projects/buffalosignup/locations/us-central1/functions/api","sourceUploadUrl":"https://storage.googleapis.com/uploads-532560304784.us-central1.cloudfunctions.appspot.com/29a7379e-c565-4d97-952a-05ce4299b82b.zip?GoogleAccessId=service-414488218320@gcf-admin-robot.iam.gserviceaccount.com&Expires=1687346054&Signature=Ku9ta%2FLvILigkqZzpbzyIbhboqTj%2BFWQCr%2BHcEh%2BcSNSnQPQU1ECJy5Kg9LN5d2Ei7yg7V02ZnfMy08blkDRct47yukR2IYXFwmBoH2IVT35QAp9GLr3uLMyn1K9UJSUw%2Bj0eptWlCZJ7sCgDaVD6MF2ETNaIDj9MUcC9oc%2FtvsQN%2B%2BV2phn9IISezlWCr6KzDVc7lKRLT6w261OEzUntFpGdVws4RG9btAe4ZbSSuS9gsvdX9X7vKZTZo%2Fbg%2BUjJwaF2WhwbTrVZu%2BWPj%2F1QEJfVFhM5KDOr1rcoqh4XXbdMCFwo%2Bb7SnvKZ843jvLz%2B%2FqQnwLw%2B3inVomPpmLwPA%3D%3D","entryPoint":"api","runtime":"nodejs18","dockerRegistry":"ARTIFACT_REGISTRY","labels":{"deployment-tool":"cli-firebase","firebase-functions-hash":"52b23f11b33e3c1ace7e6c821234c98e5d666386"},"httpsTrigger":{"securityLevel":"SECURE_ALWAYS"},"minInstances":null,"maxInstances":null,"ingressSettings":null,"environmentVariables":{"ACCOUNTSID":"AC1c89a47bdd862ddd7712f6dd6226c750","AUTHTOKEN":"36d6d880edfed4a2c3c222665bd4b326","TWILIOPHONE":"447360494809","SERVICEAUCCOUNT":"/Users/zzz/Documents/Web/Buffalo_Signup/buffalosignup-firebase-adminsdk-vzmg9-32c9d7c073.json","APIKEY":"AIzaSyD-DMzW3I5eW0ZpYuGapBYQNEf5fRH_c4g","AUTHDOMAIN":"buffalosecuritysignup.firebaseapp.com","PROJECTID":"buffalosecuritysignup","STORAGEBUCKET":"buffalosecuritysignup.appspot.com","MESSAGINGSENDERID":"7353062754","APPID":"1:7353062754:web:840b98052fc1152a86c83b","MESSUREMENTID":"G-F307JKXFQ5","FIREBASE_CONFIG":"{\"projectId\":\"buffalosignup\",\"databaseURL\":\"https://buffalosignup-default-rtdb.firebaseio.com\",\"storageBucket\":\"buffalosignup.appspot.com\"}","GCLOUD_PROJECT":"buffalosignup","EVENTARC_CLOUD_EVENT_SOURCE":"projects/buffalosignup/locations/us-central1/functions/api"},"serviceAccountEmail":null,"availableMemoryMb":null,"timeout":null,"vpcConnector":null,"vpcConnectorEgressSettings":null,"buildEnvironmentVariables":{"GOOGLE_NODE_RUN_SCRIPTS":""}}
+[debug] [2023-06-21T10:44:16.491Z] <<< [apiv2][status] POST https://cloudfunctions.googleapis.com/v1/projects/buffalosignup/locations/us-central1/functions 200
+[debug] [2023-06-21T10:44:16.491Z] <<< [apiv2][body] POST https://cloudfunctions.googleapis.com/v1/projects/buffalosignup/locations/us-central1/functions {"name":"operations/YnVmZmFsb3NpZ251cC91cy1jZW50cmFsMS9hcGkvM3MyS09ld3dCcGs","metadata":{"@type":"type.googleapis.com/google.cloud.functions.v1.OperationMetadataV1","target":"projects/buffalosignup/locations/us-central1/functions/api","type":"CREATE_FUNCTION","request":{"@type":"type.googleapis.com/google.cloud.functions.v1.CloudFunction","name":"projects/buffalosignup/locations/us-central1/functions/api","httpsTrigger":{"securityLevel":"SECURE_ALWAYS"},"entryPoint":"api","labels":{"deployment-tool":"cli-firebase","firebase-functions-hash":"52b23f11b33e3c1ace7e6c821234c98e5d666386"},"sourceUploadUrl":"https://storage.googleapis.com/uploads-532560304784.us-central1.cloudfunctions.appspot.com/29a7379e-c565-4d97-952a-05ce4299b82b.zip?GoogleAccessId=service-414488218320@gcf-admin-robot.iam.gserviceaccount.com&Expires=1687346054&Signature=Ku9ta%2FLvILigkqZzpbzyIbhboqTj%2BFWQCr%2BHcEh%2BcSNSnQPQU1ECJy5Kg9LN5d2Ei7yg7V02ZnfMy08blkDRct47yukR2IYXFwmBoH2IVT35QAp9GLr3uLMyn1K9UJSUw%2Bj0eptWlCZJ7sCgDaVD6MF2ETNaIDj9MUcC9oc%2FtvsQN%2B%2BV2phn9IISezlWCr6KzDVc7lKRLT6w261OEzUntFpGdVws4RG9btAe4ZbSSuS9gsvdX9X7vKZTZo%2Fbg%2BUjJwaF2WhwbTrVZu%2BWPj%2F1QEJfVFhM5KDOr1rcoqh4XXbdMCFwo%2Bb7SnvKZ843jvLz%2B%2FqQnwLw%2B3inVomPpmLwPA%3D%3D","environmentVariables":{"ACCOUNTSID":"AC1c89a47bdd862ddd7712f6dd6226c750","AUTHTOKEN":"36d6d880edfed4a2c3c222665bd4b326","TWILIOPHONE":"447360494809","SERVICEAUCCOUNT":"/Users/zzz/Documents/Web/Buffalo_Signup/buffalosignup-firebase-adminsdk-vzmg9-32c9d7c073.json","APIKEY":"AIzaSyD-DMzW3I5eW0ZpYuGapBYQNEf5fRH_c4g","AUTHDOMAIN":"buffalosecuritysignup.firebaseapp.com","PROJECTID":"buffalosecuritysignup","STORAGEBUCKET":"buffalosecuritysignup.appspot.com","MESSAGINGSENDERID":"7353062754","APPID":"1:7353062754:web:840b98052fc1152a86c83b","MESSUREMENTID":"G-F307JKXFQ5","FIREBASE_CONFIG":"{\"projectId\":\"buffalosignup\",\"databaseURL\":\"https://buffalosignup-default-rtdb.firebaseio.com\",\"storageBucket\":\"buffalosignup.appspot.com\"}","GCLOUD_PROJECT":"buffalosignup","EVENTARC_CLOUD_EVENT_SOURCE":"projects/buffalosignup/locations/us-central1/functions/api"},"runtime":"nodejs18","buildEnvironmentVariables":{"GOOGLE_NODE_RUN_SCRIPTS":""},"dockerRegistry":"ARTIFACT_REGISTRY"},"versionId":"1","updateTime":"2023-06-21T10:44:16Z"}}
+[debug] [2023-06-21T10:44:16.493Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v1/operations/YnVmZmFsb3NpZ251cC91cy1jZW50cmFsMS9hcGkvM3MyS09ld3dCcGs [none]
+[debug] [2023-06-21T10:44:16.685Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v1/operations/YnVmZmFsb3NpZ251cC91cy1jZW50cmFsMS9hcGkvM3MyS09ld3dCcGs 200
+[debug] [2023-06-21T10:44:16.685Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v1/operations/YnVmZmFsb3NpZ251cC91cy1jZW50cmFsMS9hcGkvM3MyS09ld3dCcGs {"name":"operations/YnVmZmFsb3NpZ251cC91cy1jZW50cmFsMS9hcGkvM3MyS09ld3dCcGs","metadata":{"@type":"type.googleapis.com/google.cloud.functions.v1.OperationMetadataV1","target":"projects/buffalosignup/locations/us-central1/functions/api","type":"CREATE_FUNCTION","request":{"@type":"type.googleapis.com/google.cloud.functions.v1.CloudFunction","name":"projects/buffalosignup/locations/us-central1/functions/api","httpsTrigger":{"securityLevel":"SECURE_ALWAYS"},"entryPoint":"api","labels":{"deployment-tool":"cli-firebase","firebase-functions-hash":"52b23f11b33e3c1ace7e6c821234c98e5d666386"},"sourceUploadUrl":"https://storage.googleapis.com/uploads-532560304784.us-central1.cloudfunctions.appspot.com/29a7379e-c565-4d97-952a-05ce4299b82b.zip?GoogleAccessId=service-414488218320@gcf-admin-robot.iam.gserviceaccount.com&Expires=1687346054&Signature=Ku9ta%2FLvILigkqZzpbzyIbhboqTj%2BFWQCr%2BHcEh%2BcSNSnQPQU1ECJy5Kg9LN5d2Ei7yg7V02ZnfMy08blkDRct47yukR2IYXFwmBoH2IVT35QAp9GLr3uLMyn1K9UJSUw%2Bj0eptWlCZJ7sCgDaVD6MF2ETNaIDj9MUcC9oc%2FtvsQN%2B%2BV2phn9IISezlWCr6KzDVc7lKRLT6w261OEzUntFpGdVws4RG9btAe4ZbSSuS9gsvdX9X7vKZTZo%2Fbg%2BUjJwaF2WhwbTrVZu%2BWPj%2F1QEJfVFhM5KDOr1rcoqh4XXbdMCFwo%2Bb7SnvKZ843jvLz%2B%2FqQnwLw%2B3inVomPpmLwPA%3D%3D","environmentVariables":{"ACCOUNTSID":"AC1c89a47bdd862ddd7712f6dd6226c750","AUTHTOKEN":"36d6d880edfed4a2c3c222665bd4b326","TWILIOPHONE":"447360494809","SERVICEAUCCOUNT":"/Users/zzz/Documents/Web/Buffalo_Signup/buffalosignup-firebase-adminsdk-vzmg9-32c9d7c073.json","APIKEY":"AIzaSyD-DMzW3I5eW0ZpYuGapBYQNEf5fRH_c4g","AUTHDOMAIN":"buffalosecuritysignup.firebaseapp.com","PROJECTID":"buffalosecuritysignup","STORAGEBUCKET":"buffalosecuritysignup.appspot.com","MESSAGINGSENDERID":"7353062754","APPID":"1:7353062754:web:840b98052fc1152a86c83b","MESSUREMENTID":"G-F307JKXFQ5","FIREBASE_CONFIG":"{\"projectId\":\"buffalosignup\",\"databaseURL\":\"https://buffalosignup-default-rtdb.firebaseio.com\",\"storageBucket\":\"buffalosignup.appspot.com\"}","GCLOUD_PROJECT":"buffalosignup","EVENTARC_CLOUD_EVENT_SOURCE":"projects/buffalosignup/locations/us-central1/functions/api"},"runtime":"nodejs18","buildEnvironmentVariables":{"GOOGLE_NODE_RUN_SCRIPTS":""},"dockerRegistry":"ARTIFACT_REGISTRY"},"versionId":"1","updateTime":"2023-06-21T10:44:16Z"}}
+[debug] [2023-06-21T10:44:17.192Z] [create-default-us-central1-api] Retrying task index 0
+[debug] [2023-06-21T10:44:17.192Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v1/operations/YnVmZmFsb3NpZ251cC91cy1jZW50cmFsMS9hcGkvM3MyS09ld3dCcGs [none]
+[debug] [2023-06-21T10:44:17.381Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v1/operations/YnVmZmFsb3NpZ251cC91cy1jZW50cmFsMS9hcGkvM3MyS09ld3dCcGs 200
+[debug] [2023-06-21T10:44:17.382Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v1/operations/YnVmZmFsb3NpZ251cC91cy1jZW50cmFsMS9hcGkvM3MyS09ld3dCcGs {"name":"operations/YnVmZmFsb3NpZ251cC91cy1jZW50cmFsMS9hcGkvM3MyS09ld3dCcGs","metadata":{"@type":"type.googleapis.com/google.cloud.functions.v1.OperationMetadataV1","target":"projects/buffalosignup/locations/us-central1/functions/api","type":"CREATE_FUNCTION","request":{"@type":"type.googleapis.com/google.cloud.functions.v1.CloudFunction","name":"projects/buffalosignup/locations/us-central1/functions/api","httpsTrigger":{"securityLevel":"SECURE_ALWAYS"},"entryPoint":"api","labels":{"deployment-tool":"cli-firebase","firebase-functions-hash":"52b23f11b33e3c1ace7e6c821234c98e5d666386"},"sourceUploadUrl":"https://storage.googleapis.com/uploads-532560304784.us-central1.cloudfunctions.appspot.com/29a7379e-c565-4d97-952a-05ce4299b82b.zip?GoogleAccessId=service-414488218320@gcf-admin-robot.iam.gserviceaccount.com&Expires=1687346054&Signature=Ku9ta%2FLvILigkqZzpbzyIbhboqTj%2BFWQCr%2BHcEh%2BcSNSnQPQU1ECJy5Kg9LN5d2Ei7yg7V02ZnfMy08blkDRct47yukR2IYXFwmBoH2IVT35QAp9GLr3uLMyn1K9UJSUw%2Bj0eptWlCZJ7sCgDaVD6MF2ETNaIDj9MUcC9oc%2FtvsQN%2B%2BV2phn9IISezlWCr6KzDVc7lKRLT6w261OEzUntFpGdVws4RG9btAe4ZbSSuS9gsvdX9X7vKZTZo%2Fbg%2BUjJwaF2WhwbTrVZu%2BWPj%2F1QEJfVFhM5KDOr1rcoqh4XXbdMCFwo%2Bb7SnvKZ843jvLz%2B%2FqQnwLw%2B3inVomPpmLwPA%3D%3D","environmentVariables":{"ACCOUNTSID":"AC1c89a47bdd862ddd7712f6dd6226c750","AUTHTOKEN":"36d6d880edfed4a2c3c222665bd4b326","TWILIOPHONE":"447360494809","SERVICEAUCCOUNT":"/Users/zzz/Documents/Web/Buffalo_Signup/buffalosignup-firebase-adminsdk-vzmg9-32c9d7c073.json","APIKEY":"AIzaSyD-DMzW3I5eW0ZpYuGapBYQNEf5fRH_c4g","AUTHDOMAIN":"buffalosecuritysignup.firebaseapp.com","PROJECTID":"buffalosecuritysignup","STORAGEBUCKET":"buffalosecuritysignup.appspot.com","MESSAGINGSENDERID":"7353062754","APPID":"1:7353062754:web:840b98052fc1152a86c83b","MESSUREMENTID":"G-F307JKXFQ5","FIREBASE_CONFIG":"{\"projectId\":\"buffalosignup\",\"databaseURL\":\"https://buffalosignup-default-rtdb.firebaseio.com\",\"storageBucket\":\"buffalosignup.appspot.com\"}","GCLOUD_PROJECT":"buffalosignup","EVENTARC_CLOUD_EVENT_SOURCE":"projects/buffalosignup/locations/us-central1/functions/api"},"runtime":"nodejs18","buildEnvironmentVariables":{"GOOGLE_NODE_RUN_SCRIPTS":""},"dockerRegistry":"ARTIFACT_REGISTRY"},"versionId":"1","updateTime":"2023-06-21T10:44:16Z"}}
+[debug] [2023-06-21T10:44:18.388Z] [create-default-us-central1-api] Retrying task index 0
+[debug] [2023-06-21T10:44:18.388Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v1/operations/YnVmZmFsb3NpZ251cC91cy1jZW50cmFsMS9hcGkvM3MyS09ld3dCcGs [none]
+[debug] [2023-06-21T10:44:18.586Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v1/operations/YnVmZmFsb3NpZ251cC91cy1jZW50cmFsMS9hcGkvM3MyS09ld3dCcGs 200
+[debug] [2023-06-21T10:44:18.586Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v1/operations/YnVmZmFsb3NpZ251cC91cy1jZW50cmFsMS9hcGkvM3MyS09ld3dCcGs {"name":"operations/YnVmZmFsb3NpZ251cC91cy1jZW50cmFsMS9hcGkvM3MyS09ld3dCcGs","metadata":{"@type":"type.googleapis.com/google.cloud.functions.v1.OperationMetadataV1","target":"projects/buffalosignup/locations/us-central1/functions/api","type":"CREATE_FUNCTION","request":{"@type":"type.googleapis.com/google.cloud.functions.v1.CloudFunction","name":"projects/buffalosignup/locations/us-central1/functions/api","httpsTrigger":{"securityLevel":"SECURE_ALWAYS"},"entryPoint":"api","labels":{"deployment-tool":"cli-firebase","firebase-functions-hash":"52b23f11b33e3c1ace7e6c821234c98e5d666386"},"sourceUploadUrl":"https://storage.googleapis.com/uploads-532560304784.us-central1.cloudfunctions.appspot.com/29a7379e-c565-4d97-952a-05ce4299b82b.zip?GoogleAccessId=service-414488218320@gcf-admin-robot.iam.gserviceaccount.com&Expires=1687346054&Signature=Ku9ta%2FLvILigkqZzpbzyIbhboqTj%2BFWQCr%2BHcEh%2BcSNSnQPQU1ECJy5Kg9LN5d2Ei7yg7V02ZnfMy08blkDRct47yukR2IYXFwmBoH2IVT35QAp9GLr3uLMyn1K9UJSUw%2Bj0eptWlCZJ7sCgDaVD6MF2ETNaIDj9MUcC9oc%2FtvsQN%2B%2BV2phn9IISezlWCr6KzDVc7lKRLT6w261OEzUntFpGdVws4RG9btAe4ZbSSuS9gsvdX9X7vKZTZo%2Fbg%2BUjJwaF2WhwbTrVZu%2BWPj%2F1QEJfVFhM5KDOr1rcoqh4XXbdMCFwo%2Bb7SnvKZ843jvLz%2B%2FqQnwLw%2B3inVomPpmLwPA%3D%3D","environmentVariables":{"ACCOUNTSID":"AC1c89a47bdd862ddd7712f6dd6226c750","AUTHTOKEN":"36d6d880edfed4a2c3c222665bd4b326","TWILIOPHONE":"447360494809","SERVICEAUCCOUNT":"/Users/zzz/Documents/Web/Buffalo_Signup/buffalosignup-firebase-adminsdk-vzmg9-32c9d7c073.json","APIKEY":"AIzaSyD-DMzW3I5eW0ZpYuGapBYQNEf5fRH_c4g","AUTHDOMAIN":"buffalosecuritysignup.firebaseapp.com","PROJECTID":"buffalosecuritysignup","STORAGEBUCKET":"buffalosecuritysignup.appspot.com","MESSAGINGSENDERID":"7353062754","APPID":"1:7353062754:web:840b98052fc1152a86c83b","MESSUREMENTID":"G-F307JKXFQ5","FIREBASE_CONFIG":"{\"projectId\":\"buffalosignup\",\"databaseURL\":\"https://buffalosignup-default-rtdb.firebaseio.com\",\"storageBucket\":\"buffalosignup.appspot.com\"}","GCLOUD_PROJECT":"buffalosignup","EVENTARC_CLOUD_EVENT_SOURCE":"projects/buffalosignup/locations/us-central1/functions/api"},"runtime":"nodejs18","buildEnvironmentVariables":{"GOOGLE_NODE_RUN_SCRIPTS":""},"dockerRegistry":"ARTIFACT_REGISTRY"},"versionId":"1","updateTime":"2023-06-21T10:44:16Z"}}
+[debug] [2023-06-21T10:44:20.591Z] [create-default-us-central1-api] Retrying task index 0
+[debug] [2023-06-21T10:44:20.592Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v1/operations/YnVmZmFsb3NpZ251cC91cy1jZW50cmFsMS9hcGkvM3MyS09ld3dCcGs [none]
+[debug] [2023-06-21T10:44:20.770Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v1/operations/YnVmZmFsb3NpZ251cC91cy1jZW50cmFsMS9hcGkvM3MyS09ld3dCcGs 200
+[debug] [2023-06-21T10:44:20.770Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v1/operations/YnVmZmFsb3NpZ251cC91cy1jZW50cmFsMS9hcGkvM3MyS09ld3dCcGs {"name":"operations/YnVmZmFsb3NpZ251cC91cy1jZW50cmFsMS9hcGkvM3MyS09ld3dCcGs","metadata":{"@type":"type.googleapis.com/google.cloud.functions.v1.OperationMetadataV1","target":"projects/buffalosignup/locations/us-central1/functions/api","type":"CREATE_FUNCTION","request":{"@type":"type.googleapis.com/google.cloud.functions.v1.CloudFunction","name":"projects/buffalosignup/locations/us-central1/functions/api","httpsTrigger":{"securityLevel":"SECURE_ALWAYS"},"entryPoint":"api","labels":{"deployment-tool":"cli-firebase","firebase-functions-hash":"52b23f11b33e3c1ace7e6c821234c98e5d666386"},"sourceUploadUrl":"https://storage.googleapis.com/uploads-532560304784.us-central1.cloudfunctions.appspot.com/29a7379e-c565-4d97-952a-05ce4299b82b.zip?GoogleAccessId=service-414488218320@gcf-admin-robot.iam.gserviceaccount.com&Expires=1687346054&Signature=Ku9ta%2FLvILigkqZzpbzyIbhboqTj%2BFWQCr%2BHcEh%2BcSNSnQPQU1ECJy5Kg9LN5d2Ei7yg7V02ZnfMy08blkDRct47yukR2IYXFwmBoH2IVT35QAp9GLr3uLMyn1K9UJSUw%2Bj0eptWlCZJ7sCgDaVD6MF2ETNaIDj9MUcC9oc%2FtvsQN%2B%2BV2phn9IISezlWCr6KzDVc7lKRLT6w261OEzUntFpGdVws4RG9btAe4ZbSSuS9gsvdX9X7vKZTZo%2Fbg%2BUjJwaF2WhwbTrVZu%2BWPj%2F1QEJfVFhM5KDOr1rcoqh4XXbdMCFwo%2Bb7SnvKZ843jvLz%2B%2FqQnwLw%2B3inVomPpmLwPA%3D%3D","environmentVariables":{"ACCOUNTSID":"AC1c89a47bdd862ddd7712f6dd6226c750","AUTHTOKEN":"36d6d880edfed4a2c3c222665bd4b326","TWILIOPHONE":"447360494809","SERVICEAUCCOUNT":"/Users/zzz/Documents/Web/Buffalo_Signup/buffalosignup-firebase-adminsdk-vzmg9-32c9d7c073.json","APIKEY":"AIzaSyD-DMzW3I5eW0ZpYuGapBYQNEf5fRH_c4g","AUTHDOMAIN":"buffalosecuritysignup.firebaseapp.com","PROJECTID":"buffalosecuritysignup","STORAGEBUCKET":"buffalosecuritysignup.appspot.com","MESSAGINGSENDERID":"7353062754","APPID":"1:7353062754:web:840b98052fc1152a86c83b","MESSUREMENTID":"G-F307JKXFQ5","FIREBASE_CONFIG":"{\"projectId\":\"buffalosignup\",\"databaseURL\":\"https://buffalosignup-default-rtdb.firebaseio.com\",\"storageBucket\":\"buffalosignup.appspot.com\"}","GCLOUD_PROJECT":"buffalosignup","EVENTARC_CLOUD_EVENT_SOURCE":"projects/buffalosignup/locations/us-central1/functions/api"},"runtime":"nodejs18","buildEnvironmentVariables":{"GOOGLE_NODE_RUN_SCRIPTS":""},"dockerRegistry":"ARTIFACT_REGISTRY"},"versionId":"1","updateTime":"2023-06-21T10:44:16Z"}}
+[debug] [2023-06-21T10:44:24.772Z] [create-default-us-central1-api] Retrying task index 0
+[debug] [2023-06-21T10:44:24.773Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v1/operations/YnVmZmFsb3NpZ251cC91cy1jZW50cmFsMS9hcGkvM3MyS09ld3dCcGs [none]
+[debug] [2023-06-21T10:44:24.942Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v1/operations/YnVmZmFsb3NpZ251cC91cy1jZW50cmFsMS9hcGkvM3MyS09ld3dCcGs 200
+[debug] [2023-06-21T10:44:24.942Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v1/operations/YnVmZmFsb3NpZ251cC91cy1jZW50cmFsMS9hcGkvM3MyS09ld3dCcGs {"name":"operations/YnVmZmFsb3NpZ251cC91cy1jZW50cmFsMS9hcGkvM3MyS09ld3dCcGs","metadata":{"@type":"type.googleapis.com/google.cloud.functions.v1.OperationMetadataV1","target":"projects/buffalosignup/locations/us-central1/functions/api","type":"CREATE_FUNCTION","request":{"@type":"type.googleapis.com/google.cloud.functions.v1.CloudFunction","name":"projects/buffalosignup/locations/us-central1/functions/api","httpsTrigger":{"securityLevel":"SECURE_ALWAYS"},"entryPoint":"api","labels":{"deployment-tool":"cli-firebase","firebase-functions-hash":"52b23f11b33e3c1ace7e6c821234c98e5d666386"},"sourceUploadUrl":"https://storage.googleapis.com/uploads-532560304784.us-central1.cloudfunctions.appspot.com/29a7379e-c565-4d97-952a-05ce4299b82b.zip?GoogleAccessId=service-414488218320@gcf-admin-robot.iam.gserviceaccount.com&Expires=1687346054&Signature=Ku9ta%2FLvILigkqZzpbzyIbhboqTj%2BFWQCr%2BHcEh%2BcSNSnQPQU1ECJy5Kg9LN5d2Ei7yg7V02ZnfMy08blkDRct47yukR2IYXFwmBoH2IVT35QAp9GLr3uLMyn1K9UJSUw%2Bj0eptWlCZJ7sCgDaVD6MF2ETNaIDj9MUcC9oc%2FtvsQN%2B%2BV2phn9IISezlWCr6KzDVc7lKRLT6w261OEzUntFpGdVws4RG9btAe4ZbSSuS9gsvdX9X7vKZTZo%2Fbg%2BUjJwaF2WhwbTrVZu%2BWPj%2F1QEJfVFhM5KDOr1rcoqh4XXbdMCFwo%2Bb7SnvKZ843jvLz%2B%2FqQnwLw%2B3inVomPpmLwPA%3D%3D","environmentVariables":{"ACCOUNTSID":"AC1c89a47bdd862ddd7712f6dd6226c750","AUTHTOKEN":"36d6d880edfed4a2c3c222665bd4b326","TWILIOPHONE":"447360494809","SERVICEAUCCOUNT":"/Users/zzz/Documents/Web/Buffalo_Signup/buffalosignup-firebase-adminsdk-vzmg9-32c9d7c073.json","APIKEY":"AIzaSyD-DMzW3I5eW0ZpYuGapBYQNEf5fRH_c4g","AUTHDOMAIN":"buffalosecuritysignup.firebaseapp.com","PROJECTID":"buffalosecuritysignup","STORAGEBUCKET":"buffalosecuritysignup.appspot.com","MESSAGINGSENDERID":"7353062754","APPID":"1:7353062754:web:840b98052fc1152a86c83b","MESSUREMENTID":"G-F307JKXFQ5","FIREBASE_CONFIG":"{\"projectId\":\"buffalosignup\",\"databaseURL\":\"https://buffalosignup-default-rtdb.firebaseio.com\",\"storageBucket\":\"buffalosignup.appspot.com\"}","GCLOUD_PROJECT":"buffalosignup","EVENTARC_CLOUD_EVENT_SOURCE":"projects/buffalosignup/locations/us-central1/functions/api"},"runtime":"nodejs18","buildEnvironmentVariables":{"GOOGLE_NODE_RUN_SCRIPTS":""},"dockerRegistry":"ARTIFACT_REGISTRY"},"versionId":"1","updateTime":"2023-06-21T10:44:16Z"}}
+[debug] [2023-06-21T10:44:32.948Z] [create-default-us-central1-api] Retrying task index 0
+[debug] [2023-06-21T10:44:32.949Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v1/operations/YnVmZmFsb3NpZ251cC91cy1jZW50cmFsMS9hcGkvM3MyS09ld3dCcGs [none]
+[debug] [2023-06-21T10:44:33.119Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v1/operations/YnVmZmFsb3NpZ251cC91cy1jZW50cmFsMS9hcGkvM3MyS09ld3dCcGs 200
+[debug] [2023-06-21T10:44:33.119Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v1/operations/YnVmZmFsb3NpZ251cC91cy1jZW50cmFsMS9hcGkvM3MyS09ld3dCcGs {"name":"operations/YnVmZmFsb3NpZ251cC91cy1jZW50cmFsMS9hcGkvM3MyS09ld3dCcGs","metadata":{"@type":"type.googleapis.com/google.cloud.functions.v1.OperationMetadataV1","target":"projects/buffalosignup/locations/us-central1/functions/api","type":"CREATE_FUNCTION","request":{"@type":"type.googleapis.com/google.cloud.functions.v1.CloudFunction","name":"projects/buffalosignup/locations/us-central1/functions/api","httpsTrigger":{"securityLevel":"SECURE_ALWAYS"},"entryPoint":"api","labels":{"deployment-tool":"cli-firebase","firebase-functions-hash":"52b23f11b33e3c1ace7e6c821234c98e5d666386"},"sourceUploadUrl":"https://storage.googleapis.com/uploads-532560304784.us-central1.cloudfunctions.appspot.com/29a7379e-c565-4d97-952a-05ce4299b82b.zip?GoogleAccessId=service-414488218320@gcf-admin-robot.iam.gserviceaccount.com&Expires=1687346054&Signature=Ku9ta%2FLvILigkqZzpbzyIbhboqTj%2BFWQCr%2BHcEh%2BcSNSnQPQU1ECJy5Kg9LN5d2Ei7yg7V02ZnfMy08blkDRct47yukR2IYXFwmBoH2IVT35QAp9GLr3uLMyn1K9UJSUw%2Bj0eptWlCZJ7sCgDaVD6MF2ETNaIDj9MUcC9oc%2FtvsQN%2B%2BV2phn9IISezlWCr6KzDVc7lKRLT6w261OEzUntFpGdVws4RG9btAe4ZbSSuS9gsvdX9X7vKZTZo%2Fbg%2BUjJwaF2WhwbTrVZu%2BWPj%2F1QEJfVFhM5KDOr1rcoqh4XXbdMCFwo%2Bb7SnvKZ843jvLz%2B%2FqQnwLw%2B3inVomPpmLwPA%3D%3D","environmentVariables":{"ACCOUNTSID":"AC1c89a47bdd862ddd7712f6dd6226c750","AUTHTOKEN":"36d6d880edfed4a2c3c222665bd4b326","TWILIOPHONE":"447360494809","SERVICEAUCCOUNT":"/Users/zzz/Documents/Web/Buffalo_Signup/buffalosignup-firebase-adminsdk-vzmg9-32c9d7c073.json","APIKEY":"AIzaSyD-DMzW3I5eW0ZpYuGapBYQNEf5fRH_c4g","AUTHDOMAIN":"buffalosecuritysignup.firebaseapp.com","PROJECTID":"buffalosecuritysignup","STORAGEBUCKET":"buffalosecuritysignup.appspot.com","MESSAGINGSENDERID":"7353062754","APPID":"1:7353062754:web:840b98052fc1152a86c83b","MESSUREMENTID":"G-F307JKXFQ5","FIREBASE_CONFIG":"{\"projectId\":\"buffalosignup\",\"databaseURL\":\"https://buffalosignup-default-rtdb.firebaseio.com\",\"storageBucket\":\"buffalosignup.appspot.com\"}","GCLOUD_PROJECT":"buffalosignup","EVENTARC_CLOUD_EVENT_SOURCE":"projects/buffalosignup/locations/us-central1/functions/api"},"runtime":"nodejs18","buildEnvironmentVariables":{"GOOGLE_NODE_RUN_SCRIPTS":""},"dockerRegistry":"ARTIFACT_REGISTRY"},"versionId":"1","updateTime":"2023-06-21T10:44:16Z","buildId":"15b13bef-119d-4c70-834f-f7505295fd19","buildName":"projects/414488218320/locations/us-central1/builds/15b13bef-119d-4c70-834f-f7505295fd19"}}
+[debug] [2023-06-21T10:44:43.125Z] [create-default-us-central1-api] Retrying task index 0
+[debug] [2023-06-21T10:44:43.126Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v1/operations/YnVmZmFsb3NpZ251cC91cy1jZW50cmFsMS9hcGkvM3MyS09ld3dCcGs [none]
+[debug] [2023-06-21T10:44:43.306Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v1/operations/YnVmZmFsb3NpZ251cC91cy1jZW50cmFsMS9hcGkvM3MyS09ld3dCcGs 200
+[debug] [2023-06-21T10:44:43.306Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v1/operations/YnVmZmFsb3NpZ251cC91cy1jZW50cmFsMS9hcGkvM3MyS09ld3dCcGs {"name":"operations/YnVmZmFsb3NpZ251cC91cy1jZW50cmFsMS9hcGkvM3MyS09ld3dCcGs","metadata":{"@type":"type.googleapis.com/google.cloud.functions.v1.OperationMetadataV1","target":"projects/buffalosignup/locations/us-central1/functions/api","type":"CREATE_FUNCTION","request":{"@type":"type.googleapis.com/google.cloud.functions.v1.CloudFunction","name":"projects/buffalosignup/locations/us-central1/functions/api","httpsTrigger":{"securityLevel":"SECURE_ALWAYS"},"entryPoint":"api","labels":{"deployment-tool":"cli-firebase","firebase-functions-hash":"52b23f11b33e3c1ace7e6c821234c98e5d666386"},"sourceUploadUrl":"https://storage.googleapis.com/uploads-532560304784.us-central1.cloudfunctions.appspot.com/29a7379e-c565-4d97-952a-05ce4299b82b.zip?GoogleAccessId=service-414488218320@gcf-admin-robot.iam.gserviceaccount.com&Expires=1687346054&Signature=Ku9ta%2FLvILigkqZzpbzyIbhboqTj%2BFWQCr%2BHcEh%2BcSNSnQPQU1ECJy5Kg9LN5d2Ei7yg7V02ZnfMy08blkDRct47yukR2IYXFwmBoH2IVT35QAp9GLr3uLMyn1K9UJSUw%2Bj0eptWlCZJ7sCgDaVD6MF2ETNaIDj9MUcC9oc%2FtvsQN%2B%2BV2phn9IISezlWCr6KzDVc7lKRLT6w261OEzUntFpGdVws4RG9btAe4ZbSSuS9gsvdX9X7vKZTZo%2Fbg%2BUjJwaF2WhwbTrVZu%2BWPj%2F1QEJfVFhM5KDOr1rcoqh4XXbdMCFwo%2Bb7SnvKZ843jvLz%2B%2FqQnwLw%2B3inVomPpmLwPA%3D%3D","environmentVariables":{"ACCOUNTSID":"AC1c89a47bdd862ddd7712f6dd6226c750","AUTHTOKEN":"36d6d880edfed4a2c3c222665bd4b326","TWILIOPHONE":"447360494809","SERVICEAUCCOUNT":"/Users/zzz/Documents/Web/Buffalo_Signup/buffalosignup-firebase-adminsdk-vzmg9-32c9d7c073.json","APIKEY":"AIzaSyD-DMzW3I5eW0ZpYuGapBYQNEf5fRH_c4g","AUTHDOMAIN":"buffalosecuritysignup.firebaseapp.com","PROJECTID":"buffalosecuritysignup","STORAGEBUCKET":"buffalosecuritysignup.appspot.com","MESSAGINGSENDERID":"7353062754","APPID":"1:7353062754:web:840b98052fc1152a86c83b","MESSUREMENTID":"G-F307JKXFQ5","FIREBASE_CONFIG":"{\"projectId\":\"buffalosignup\",\"databaseURL\":\"https://buffalosignup-default-rtdb.firebaseio.com\",\"storageBucket\":\"buffalosignup.appspot.com\"}","GCLOUD_PROJECT":"buffalosignup","EVENTARC_CLOUD_EVENT_SOURCE":"projects/buffalosignup/locations/us-central1/functions/api"},"runtime":"nodejs18","buildEnvironmentVariables":{"GOOGLE_NODE_RUN_SCRIPTS":""},"dockerRegistry":"ARTIFACT_REGISTRY"},"versionId":"1","updateTime":"2023-06-21T10:44:16Z","buildId":"15b13bef-119d-4c70-834f-f7505295fd19","buildName":"projects/414488218320/locations/us-central1/builds/15b13bef-119d-4c70-834f-f7505295fd19"}}
+[debug] [2023-06-21T10:44:53.309Z] [create-default-us-central1-api] Retrying task index 0
+[debug] [2023-06-21T10:44:53.310Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v1/operations/YnVmZmFsb3NpZ251cC91cy1jZW50cmFsMS9hcGkvM3MyS09ld3dCcGs [none]
+[debug] [2023-06-21T10:44:53.482Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v1/operations/YnVmZmFsb3NpZ251cC91cy1jZW50cmFsMS9hcGkvM3MyS09ld3dCcGs 200
+[debug] [2023-06-21T10:44:53.482Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v1/operations/YnVmZmFsb3NpZ251cC91cy1jZW50cmFsMS9hcGkvM3MyS09ld3dCcGs {"name":"operations/YnVmZmFsb3NpZ251cC91cy1jZW50cmFsMS9hcGkvM3MyS09ld3dCcGs","metadata":{"@type":"type.googleapis.com/google.cloud.functions.v1.OperationMetadataV1","target":"projects/buffalosignup/locations/us-central1/functions/api","type":"CREATE_FUNCTION","request":{"@type":"type.googleapis.com/google.cloud.functions.v1.CloudFunction","name":"projects/buffalosignup/locations/us-central1/functions/api","httpsTrigger":{"securityLevel":"SECURE_ALWAYS"},"entryPoint":"api","labels":{"deployment-tool":"cli-firebase","firebase-functions-hash":"52b23f11b33e3c1ace7e6c821234c98e5d666386"},"sourceUploadUrl":"https://storage.googleapis.com/uploads-532560304784.us-central1.cloudfunctions.appspot.com/29a7379e-c565-4d97-952a-05ce4299b82b.zip?GoogleAccessId=service-414488218320@gcf-admin-robot.iam.gserviceaccount.com&Expires=1687346054&Signature=Ku9ta%2FLvILigkqZzpbzyIbhboqTj%2BFWQCr%2BHcEh%2BcSNSnQPQU1ECJy5Kg9LN5d2Ei7yg7V02ZnfMy08blkDRct47yukR2IYXFwmBoH2IVT35QAp9GLr3uLMyn1K9UJSUw%2Bj0eptWlCZJ7sCgDaVD6MF2ETNaIDj9MUcC9oc%2FtvsQN%2B%2BV2phn9IISezlWCr6KzDVc7lKRLT6w261OEzUntFpGdVws4RG9btAe4ZbSSuS9gsvdX9X7vKZTZo%2Fbg%2BUjJwaF2WhwbTrVZu%2BWPj%2F1QEJfVFhM5KDOr1rcoqh4XXbdMCFwo%2Bb7SnvKZ843jvLz%2B%2FqQnwLw%2B3inVomPpmLwPA%3D%3D","environmentVariables":{"ACCOUNTSID":"AC1c89a47bdd862ddd7712f6dd6226c750","AUTHTOKEN":"36d6d880edfed4a2c3c222665bd4b326","TWILIOPHONE":"447360494809","SERVICEAUCCOUNT":"/Users/zzz/Documents/Web/Buffalo_Signup/buffalosignup-firebase-adminsdk-vzmg9-32c9d7c073.json","APIKEY":"AIzaSyD-DMzW3I5eW0ZpYuGapBYQNEf5fRH_c4g","AUTHDOMAIN":"buffalosecuritysignup.firebaseapp.com","PROJECTID":"buffalosecuritysignup","STORAGEBUCKET":"buffalosecuritysignup.appspot.com","MESSAGINGSENDERID":"7353062754","APPID":"1:7353062754:web:840b98052fc1152a86c83b","MESSUREMENTID":"G-F307JKXFQ5","FIREBASE_CONFIG":"{\"projectId\":\"buffalosignup\",\"databaseURL\":\"https://buffalosignup-default-rtdb.firebaseio.com\",\"storageBucket\":\"buffalosignup.appspot.com\"}","GCLOUD_PROJECT":"buffalosignup","EVENTARC_CLOUD_EVENT_SOURCE":"projects/buffalosignup/locations/us-central1/functions/api"},"runtime":"nodejs18","buildEnvironmentVariables":{"GOOGLE_NODE_RUN_SCRIPTS":""},"dockerRegistry":"ARTIFACT_REGISTRY"},"versionId":"1","updateTime":"2023-06-21T10:44:16Z","buildId":"15b13bef-119d-4c70-834f-f7505295fd19","buildName":"projects/414488218320/locations/us-central1/builds/15b13bef-119d-4c70-834f-f7505295fd19"}}
+[debug] [2023-06-21T10:45:03.484Z] [create-default-us-central1-api] Retrying task index 0
+[debug] [2023-06-21T10:45:03.485Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v1/operations/YnVmZmFsb3NpZ251cC91cy1jZW50cmFsMS9hcGkvM3MyS09ld3dCcGs [none]
+[debug] [2023-06-21T10:45:03.660Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v1/operations/YnVmZmFsb3NpZ251cC91cy1jZW50cmFsMS9hcGkvM3MyS09ld3dCcGs 200
+[debug] [2023-06-21T10:45:03.660Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v1/operations/YnVmZmFsb3NpZ251cC91cy1jZW50cmFsMS9hcGkvM3MyS09ld3dCcGs {"name":"operations/YnVmZmFsb3NpZ251cC91cy1jZW50cmFsMS9hcGkvM3MyS09ld3dCcGs","metadata":{"@type":"type.googleapis.com/google.cloud.functions.v1.OperationMetadataV1","target":"projects/buffalosignup/locations/us-central1/functions/api","type":"CREATE_FUNCTION","request":{"@type":"type.googleapis.com/google.cloud.functions.v1.CloudFunction","name":"projects/buffalosignup/locations/us-central1/functions/api","httpsTrigger":{"securityLevel":"SECURE_ALWAYS"},"entryPoint":"api","labels":{"deployment-tool":"cli-firebase","firebase-functions-hash":"52b23f11b33e3c1ace7e6c821234c98e5d666386"},"sourceUploadUrl":"https://storage.googleapis.com/uploads-532560304784.us-central1.cloudfunctions.appspot.com/29a7379e-c565-4d97-952a-05ce4299b82b.zip?GoogleAccessId=service-414488218320@gcf-admin-robot.iam.gserviceaccount.com&Expires=1687346054&Signature=Ku9ta%2FLvILigkqZzpbzyIbhboqTj%2BFWQCr%2BHcEh%2BcSNSnQPQU1ECJy5Kg9LN5d2Ei7yg7V02ZnfMy08blkDRct47yukR2IYXFwmBoH2IVT35QAp9GLr3uLMyn1K9UJSUw%2Bj0eptWlCZJ7sCgDaVD6MF2ETNaIDj9MUcC9oc%2FtvsQN%2B%2BV2phn9IISezlWCr6KzDVc7lKRLT6w261OEzUntFpGdVws4RG9btAe4ZbSSuS9gsvdX9X7vKZTZo%2Fbg%2BUjJwaF2WhwbTrVZu%2BWPj%2F1QEJfVFhM5KDOr1rcoqh4XXbdMCFwo%2Bb7SnvKZ843jvLz%2B%2FqQnwLw%2B3inVomPpmLwPA%3D%3D","environmentVariables":{"ACCOUNTSID":"AC1c89a47bdd862ddd7712f6dd6226c750","AUTHTOKEN":"36d6d880edfed4a2c3c222665bd4b326","TWILIOPHONE":"447360494809","SERVICEAUCCOUNT":"/Users/zzz/Documents/Web/Buffalo_Signup/buffalosignup-firebase-adminsdk-vzmg9-32c9d7c073.json","APIKEY":"AIzaSyD-DMzW3I5eW0ZpYuGapBYQNEf5fRH_c4g","AUTHDOMAIN":"buffalosecuritysignup.firebaseapp.com","PROJECTID":"buffalosecuritysignup","STORAGEBUCKET":"buffalosecuritysignup.appspot.com","MESSAGINGSENDERID":"7353062754","APPID":"1:7353062754:web:840b98052fc1152a86c83b","MESSUREMENTID":"G-F307JKXFQ5","FIREBASE_CONFIG":"{\"projectId\":\"buffalosignup\",\"databaseURL\":\"https://buffalosignup-default-rtdb.firebaseio.com\",\"storageBucket\":\"buffalosignup.appspot.com\"}","GCLOUD_PROJECT":"buffalosignup","EVENTARC_CLOUD_EVENT_SOURCE":"projects/buffalosignup/locations/us-central1/functions/api"},"runtime":"nodejs18","buildEnvironmentVariables":{"GOOGLE_NODE_RUN_SCRIPTS":""},"dockerRegistry":"ARTIFACT_REGISTRY"},"versionId":"1","updateTime":"2023-06-21T10:44:16Z","buildId":"15b13bef-119d-4c70-834f-f7505295fd19","buildName":"projects/414488218320/locations/us-central1/builds/15b13bef-119d-4c70-834f-f7505295fd19"}}
+[debug] [2023-06-21T10:45:13.662Z] [create-default-us-central1-api] Retrying task index 0
+[debug] [2023-06-21T10:45:13.663Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v1/operations/YnVmZmFsb3NpZ251cC91cy1jZW50cmFsMS9hcGkvM3MyS09ld3dCcGs [none]
+[debug] [2023-06-21T10:45:13.838Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v1/operations/YnVmZmFsb3NpZ251cC91cy1jZW50cmFsMS9hcGkvM3MyS09ld3dCcGs 200
+[debug] [2023-06-21T10:45:13.838Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v1/operations/YnVmZmFsb3NpZ251cC91cy1jZW50cmFsMS9hcGkvM3MyS09ld3dCcGs {"name":"operations/YnVmZmFsb3NpZ251cC91cy1jZW50cmFsMS9hcGkvM3MyS09ld3dCcGs","metadata":{"@type":"type.googleapis.com/google.cloud.functions.v1.OperationMetadataV1","target":"projects/buffalosignup/locations/us-central1/functions/api","type":"CREATE_FUNCTION","request":{"@type":"type.googleapis.com/google.cloud.functions.v1.CloudFunction","name":"projects/buffalosignup/locations/us-central1/functions/api","httpsTrigger":{"securityLevel":"SECURE_ALWAYS"},"entryPoint":"api","labels":{"deployment-tool":"cli-firebase","firebase-functions-hash":"52b23f11b33e3c1ace7e6c821234c98e5d666386"},"sourceUploadUrl":"https://storage.googleapis.com/uploads-532560304784.us-central1.cloudfunctions.appspot.com/29a7379e-c565-4d97-952a-05ce4299b82b.zip?GoogleAccessId=service-414488218320@gcf-admin-robot.iam.gserviceaccount.com&Expires=1687346054&Signature=Ku9ta%2FLvILigkqZzpbzyIbhboqTj%2BFWQCr%2BHcEh%2BcSNSnQPQU1ECJy5Kg9LN5d2Ei7yg7V02ZnfMy08blkDRct47yukR2IYXFwmBoH2IVT35QAp9GLr3uLMyn1K9UJSUw%2Bj0eptWlCZJ7sCgDaVD6MF2ETNaIDj9MUcC9oc%2FtvsQN%2B%2BV2phn9IISezlWCr6KzDVc7lKRLT6w261OEzUntFpGdVws4RG9btAe4ZbSSuS9gsvdX9X7vKZTZo%2Fbg%2BUjJwaF2WhwbTrVZu%2BWPj%2F1QEJfVFhM5KDOr1rcoqh4XXbdMCFwo%2Bb7SnvKZ843jvLz%2B%2FqQnwLw%2B3inVomPpmLwPA%3D%3D","environmentVariables":{"ACCOUNTSID":"AC1c89a47bdd862ddd7712f6dd6226c750","AUTHTOKEN":"36d6d880edfed4a2c3c222665bd4b326","TWILIOPHONE":"447360494809","SERVICEAUCCOUNT":"/Users/zzz/Documents/Web/Buffalo_Signup/buffalosignup-firebase-adminsdk-vzmg9-32c9d7c073.json","APIKEY":"AIzaSyD-DMzW3I5eW0ZpYuGapBYQNEf5fRH_c4g","AUTHDOMAIN":"buffalosecuritysignup.firebaseapp.com","PROJECTID":"buffalosecuritysignup","STORAGEBUCKET":"buffalosecuritysignup.appspot.com","MESSAGINGSENDERID":"7353062754","APPID":"1:7353062754:web:840b98052fc1152a86c83b","MESSUREMENTID":"G-F307JKXFQ5","FIREBASE_CONFIG":"{\"projectId\":\"buffalosignup\",\"databaseURL\":\"https://buffalosignup-default-rtdb.firebaseio.com\",\"storageBucket\":\"buffalosignup.appspot.com\"}","GCLOUD_PROJECT":"buffalosignup","EVENTARC_CLOUD_EVENT_SOURCE":"projects/buffalosignup/locations/us-central1/functions/api"},"runtime":"nodejs18","buildEnvironmentVariables":{"GOOGLE_NODE_RUN_SCRIPTS":""},"dockerRegistry":"ARTIFACT_REGISTRY"},"versionId":"1","updateTime":"2023-06-21T10:44:16Z","buildId":"15b13bef-119d-4c70-834f-f7505295fd19","buildName":"projects/414488218320/locations/us-central1/builds/15b13bef-119d-4c70-834f-f7505295fd19"}}
+[debug] [2023-06-21T10:45:23.838Z] [create-default-us-central1-api] Retrying task index 0
+[debug] [2023-06-21T10:45:23.839Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v1/operations/YnVmZmFsb3NpZ251cC91cy1jZW50cmFsMS9hcGkvM3MyS09ld3dCcGs [none]
+[debug] [2023-06-21T10:45:24.017Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v1/operations/YnVmZmFsb3NpZ251cC91cy1jZW50cmFsMS9hcGkvM3MyS09ld3dCcGs 200
+[debug] [2023-06-21T10:45:24.018Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v1/operations/YnVmZmFsb3NpZ251cC91cy1jZW50cmFsMS9hcGkvM3MyS09ld3dCcGs {"name":"operations/YnVmZmFsb3NpZ251cC91cy1jZW50cmFsMS9hcGkvM3MyS09ld3dCcGs","metadata":{"@type":"type.googleapis.com/google.cloud.functions.v1.OperationMetadataV1","target":"projects/buffalosignup/locations/us-central1/functions/api","type":"CREATE_FUNCTION","request":{"@type":"type.googleapis.com/google.cloud.functions.v1.CloudFunction","name":"projects/buffalosignup/locations/us-central1/functions/api","httpsTrigger":{"securityLevel":"SECURE_ALWAYS"},"entryPoint":"api","labels":{"deployment-tool":"cli-firebase","firebase-functions-hash":"52b23f11b33e3c1ace7e6c821234c98e5d666386"},"sourceUploadUrl":"https://storage.googleapis.com/uploads-532560304784.us-central1.cloudfunctions.appspot.com/29a7379e-c565-4d97-952a-05ce4299b82b.zip?GoogleAccessId=service-414488218320@gcf-admin-robot.iam.gserviceaccount.com&Expires=1687346054&Signature=Ku9ta%2FLvILigkqZzpbzyIbhboqTj%2BFWQCr%2BHcEh%2BcSNSnQPQU1ECJy5Kg9LN5d2Ei7yg7V02ZnfMy08blkDRct47yukR2IYXFwmBoH2IVT35QAp9GLr3uLMyn1K9UJSUw%2Bj0eptWlCZJ7sCgDaVD6MF2ETNaIDj9MUcC9oc%2FtvsQN%2B%2BV2phn9IISezlWCr6KzDVc7lKRLT6w261OEzUntFpGdVws4RG9btAe4ZbSSuS9gsvdX9X7vKZTZo%2Fbg%2BUjJwaF2WhwbTrVZu%2BWPj%2F1QEJfVFhM5KDOr1rcoqh4XXbdMCFwo%2Bb7SnvKZ843jvLz%2B%2FqQnwLw%2B3inVomPpmLwPA%3D%3D","environmentVariables":{"ACCOUNTSID":"AC1c89a47bdd862ddd7712f6dd6226c750","AUTHTOKEN":"36d6d880edfed4a2c3c222665bd4b326","TWILIOPHONE":"447360494809","SERVICEAUCCOUNT":"/Users/zzz/Documents/Web/Buffalo_Signup/buffalosignup-firebase-adminsdk-vzmg9-32c9d7c073.json","APIKEY":"AIzaSyD-DMzW3I5eW0ZpYuGapBYQNEf5fRH_c4g","AUTHDOMAIN":"buffalosecuritysignup.firebaseapp.com","PROJECTID":"buffalosecuritysignup","STORAGEBUCKET":"buffalosecuritysignup.appspot.com","MESSAGINGSENDERID":"7353062754","APPID":"1:7353062754:web:840b98052fc1152a86c83b","MESSUREMENTID":"G-F307JKXFQ5","FIREBASE_CONFIG":"{\"projectId\":\"buffalosignup\",\"databaseURL\":\"https://buffalosignup-default-rtdb.firebaseio.com\",\"storageBucket\":\"buffalosignup.appspot.com\"}","GCLOUD_PROJECT":"buffalosignup","EVENTARC_CLOUD_EVENT_SOURCE":"projects/buffalosignup/locations/us-central1/functions/api"},"runtime":"nodejs18","buildEnvironmentVariables":{"GOOGLE_NODE_RUN_SCRIPTS":""},"dockerRegistry":"ARTIFACT_REGISTRY"},"versionId":"1","updateTime":"2023-06-21T10:44:16Z","buildId":"15b13bef-119d-4c70-834f-f7505295fd19","buildName":"projects/414488218320/locations/us-central1/builds/15b13bef-119d-4c70-834f-f7505295fd19"}}
+[debug] [2023-06-21T10:45:34.024Z] [create-default-us-central1-api] Retrying task index 0
+[debug] [2023-06-21T10:45:34.025Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v1/operations/YnVmZmFsb3NpZ251cC91cy1jZW50cmFsMS9hcGkvM3MyS09ld3dCcGs [none]
+[debug] [2023-06-21T10:45:34.188Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v1/operations/YnVmZmFsb3NpZ251cC91cy1jZW50cmFsMS9hcGkvM3MyS09ld3dCcGs 200
+[debug] [2023-06-21T10:45:34.189Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v1/operations/YnVmZmFsb3NpZ251cC91cy1jZW50cmFsMS9hcGkvM3MyS09ld3dCcGs {"name":"operations/YnVmZmFsb3NpZ251cC91cy1jZW50cmFsMS9hcGkvM3MyS09ld3dCcGs","metadata":{"@type":"type.googleapis.com/google.cloud.functions.v1.OperationMetadataV1","target":"projects/buffalosignup/locations/us-central1/functions/api","type":"CREATE_FUNCTION","request":{"@type":"type.googleapis.com/google.cloud.functions.v1.CloudFunction","name":"projects/buffalosignup/locations/us-central1/functions/api","httpsTrigger":{"securityLevel":"SECURE_ALWAYS"},"entryPoint":"api","labels":{"deployment-tool":"cli-firebase","firebase-functions-hash":"52b23f11b33e3c1ace7e6c821234c98e5d666386"},"sourceUploadUrl":"https://storage.googleapis.com/uploads-532560304784.us-central1.cloudfunctions.appspot.com/29a7379e-c565-4d97-952a-05ce4299b82b.zip?GoogleAccessId=service-414488218320@gcf-admin-robot.iam.gserviceaccount.com&Expires=1687346054&Signature=Ku9ta%2FLvILigkqZzpbzyIbhboqTj%2BFWQCr%2BHcEh%2BcSNSnQPQU1ECJy5Kg9LN5d2Ei7yg7V02ZnfMy08blkDRct47yukR2IYXFwmBoH2IVT35QAp9GLr3uLMyn1K9UJSUw%2Bj0eptWlCZJ7sCgDaVD6MF2ETNaIDj9MUcC9oc%2FtvsQN%2B%2BV2phn9IISezlWCr6KzDVc7lKRLT6w261OEzUntFpGdVws4RG9btAe4ZbSSuS9gsvdX9X7vKZTZo%2Fbg%2BUjJwaF2WhwbTrVZu%2BWPj%2F1QEJfVFhM5KDOr1rcoqh4XXbdMCFwo%2Bb7SnvKZ843jvLz%2B%2FqQnwLw%2B3inVomPpmLwPA%3D%3D","environmentVariables":{"ACCOUNTSID":"AC1c89a47bdd862ddd7712f6dd6226c750","AUTHTOKEN":"36d6d880edfed4a2c3c222665bd4b326","TWILIOPHONE":"447360494809","SERVICEAUCCOUNT":"/Users/zzz/Documents/Web/Buffalo_Signup/buffalosignup-firebase-adminsdk-vzmg9-32c9d7c073.json","APIKEY":"AIzaSyD-DMzW3I5eW0ZpYuGapBYQNEf5fRH_c4g","AUTHDOMAIN":"buffalosecuritysignup.firebaseapp.com","PROJECTID":"buffalosecuritysignup","STORAGEBUCKET":"buffalosecuritysignup.appspot.com","MESSAGINGSENDERID":"7353062754","APPID":"1:7353062754:web:840b98052fc1152a86c83b","MESSUREMENTID":"G-F307JKXFQ5","FIREBASE_CONFIG":"{\"projectId\":\"buffalosignup\",\"databaseURL\":\"https://buffalosignup-default-rtdb.firebaseio.com\",\"storageBucket\":\"buffalosignup.appspot.com\"}","GCLOUD_PROJECT":"buffalosignup","EVENTARC_CLOUD_EVENT_SOURCE":"projects/buffalosignup/locations/us-central1/functions/api"},"runtime":"nodejs18","buildEnvironmentVariables":{"GOOGLE_NODE_RUN_SCRIPTS":""},"dockerRegistry":"ARTIFACT_REGISTRY"},"versionId":"1","updateTime":"2023-06-21T10:44:16Z","buildId":"15b13bef-119d-4c70-834f-f7505295fd19","sourceToken":"2919da03-558f-4ea0-8a7d-d62c98c13402","buildName":"projects/414488218320/locations/us-central1/builds/15b13bef-119d-4c70-834f-f7505295fd19"}}
+[debug] [2023-06-21T10:45:34.189Z] Got source token 2919da03-558f-4ea0-8a7d-d62c98c13402 for region us-central1
+[debug] [2023-06-21T10:45:44.195Z] [create-default-us-central1-api] Retrying task index 0
+[debug] [2023-06-21T10:45:44.196Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v1/operations/YnVmZmFsb3NpZ251cC91cy1jZW50cmFsMS9hcGkvM3MyS09ld3dCcGs [none]
+[debug] [2023-06-21T10:45:44.383Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v1/operations/YnVmZmFsb3NpZ251cC91cy1jZW50cmFsMS9hcGkvM3MyS09ld3dCcGs 200
+[debug] [2023-06-21T10:45:44.383Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v1/operations/YnVmZmFsb3NpZ251cC91cy1jZW50cmFsMS9hcGkvM3MyS09ld3dCcGs {"name":"operations/YnVmZmFsb3NpZ251cC91cy1jZW50cmFsMS9hcGkvM3MyS09ld3dCcGs","metadata":{"@type":"type.googleapis.com/google.cloud.functions.v1.OperationMetadataV1","target":"projects/buffalosignup/locations/us-central1/functions/api","type":"CREATE_FUNCTION","request":{"@type":"type.googleapis.com/google.cloud.functions.v1.CloudFunction","name":"projects/buffalosignup/locations/us-central1/functions/api","httpsTrigger":{"securityLevel":"SECURE_ALWAYS"},"entryPoint":"api","labels":{"deployment-tool":"cli-firebase","firebase-functions-hash":"52b23f11b33e3c1ace7e6c821234c98e5d666386"},"sourceUploadUrl":"https://storage.googleapis.com/uploads-532560304784.us-central1.cloudfunctions.appspot.com/29a7379e-c565-4d97-952a-05ce4299b82b.zip?GoogleAccessId=service-414488218320@gcf-admin-robot.iam.gserviceaccount.com&Expires=1687346054&Signature=Ku9ta%2FLvILigkqZzpbzyIbhboqTj%2BFWQCr%2BHcEh%2BcSNSnQPQU1ECJy5Kg9LN5d2Ei7yg7V02ZnfMy08blkDRct47yukR2IYXFwmBoH2IVT35QAp9GLr3uLMyn1K9UJSUw%2Bj0eptWlCZJ7sCgDaVD6MF2ETNaIDj9MUcC9oc%2FtvsQN%2B%2BV2phn9IISezlWCr6KzDVc7lKRLT6w261OEzUntFpGdVws4RG9btAe4ZbSSuS9gsvdX9X7vKZTZo%2Fbg%2BUjJwaF2WhwbTrVZu%2BWPj%2F1QEJfVFhM5KDOr1rcoqh4XXbdMCFwo%2Bb7SnvKZ843jvLz%2B%2FqQnwLw%2B3inVomPpmLwPA%3D%3D","environmentVariables":{"ACCOUNTSID":"AC1c89a47bdd862ddd7712f6dd6226c750","AUTHTOKEN":"36d6d880edfed4a2c3c222665bd4b326","TWILIOPHONE":"447360494809","SERVICEAUCCOUNT":"/Users/zzz/Documents/Web/Buffalo_Signup/buffalosignup-firebase-adminsdk-vzmg9-32c9d7c073.json","APIKEY":"AIzaSyD-DMzW3I5eW0ZpYuGapBYQNEf5fRH_c4g","AUTHDOMAIN":"buffalosecuritysignup.firebaseapp.com","PROJECTID":"buffalosecuritysignup","STORAGEBUCKET":"buffalosecuritysignup.appspot.com","MESSAGINGSENDERID":"7353062754","APPID":"1:7353062754:web:840b98052fc1152a86c83b","MESSUREMENTID":"G-F307JKXFQ5","FIREBASE_CONFIG":"{\"projectId\":\"buffalosignup\",\"databaseURL\":\"https://buffalosignup-default-rtdb.firebaseio.com\",\"storageBucket\":\"buffalosignup.appspot.com\"}","GCLOUD_PROJECT":"buffalosignup","EVENTARC_CLOUD_EVENT_SOURCE":"projects/buffalosignup/locations/us-central1/functions/api"},"runtime":"nodejs18","buildEnvironmentVariables":{"GOOGLE_NODE_RUN_SCRIPTS":""},"dockerRegistry":"ARTIFACT_REGISTRY"},"versionId":"1","updateTime":"2023-06-21T10:44:16Z","buildId":"15b13bef-119d-4c70-834f-f7505295fd19","sourceToken":"2919da03-558f-4ea0-8a7d-d62c98c13402","buildName":"projects/414488218320/locations/us-central1/builds/15b13bef-119d-4c70-834f-f7505295fd19"}}
+[debug] [2023-06-21T10:45:44.384Z] Got source token 2919da03-558f-4ea0-8a7d-d62c98c13402 for region us-central1
+[debug] [2023-06-21T10:45:54.386Z] [create-default-us-central1-api] Retrying task index 0
+[debug] [2023-06-21T10:45:54.388Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v1/operations/YnVmZmFsb3NpZ251cC91cy1jZW50cmFsMS9hcGkvM3MyS09ld3dCcGs [none]
+[debug] [2023-06-21T10:45:54.574Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v1/operations/YnVmZmFsb3NpZ251cC91cy1jZW50cmFsMS9hcGkvM3MyS09ld3dCcGs 200
+[debug] [2023-06-21T10:45:54.574Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v1/operations/YnVmZmFsb3NpZ251cC91cy1jZW50cmFsMS9hcGkvM3MyS09ld3dCcGs {"name":"operations/YnVmZmFsb3NpZ251cC91cy1jZW50cmFsMS9hcGkvM3MyS09ld3dCcGs","metadata":{"@type":"type.googleapis.com/google.cloud.functions.v1.OperationMetadataV1","target":"projects/buffalosignup/locations/us-central1/functions/api","type":"CREATE_FUNCTION","request":{"@type":"type.googleapis.com/google.cloud.functions.v1.CloudFunction","name":"projects/buffalosignup/locations/us-central1/functions/api","httpsTrigger":{"securityLevel":"SECURE_ALWAYS"},"entryPoint":"api","labels":{"deployment-tool":"cli-firebase","firebase-functions-hash":"52b23f11b33e3c1ace7e6c821234c98e5d666386"},"sourceUploadUrl":"https://storage.googleapis.com/uploads-532560304784.us-central1.cloudfunctions.appspot.com/29a7379e-c565-4d97-952a-05ce4299b82b.zip?GoogleAccessId=service-414488218320@gcf-admin-robot.iam.gserviceaccount.com&Expires=1687346054&Signature=Ku9ta%2FLvILigkqZzpbzyIbhboqTj%2BFWQCr%2BHcEh%2BcSNSnQPQU1ECJy5Kg9LN5d2Ei7yg7V02ZnfMy08blkDRct47yukR2IYXFwmBoH2IVT35QAp9GLr3uLMyn1K9UJSUw%2Bj0eptWlCZJ7sCgDaVD6MF2ETNaIDj9MUcC9oc%2FtvsQN%2B%2BV2phn9IISezlWCr6KzDVc7lKRLT6w261OEzUntFpGdVws4RG9btAe4ZbSSuS9gsvdX9X7vKZTZo%2Fbg%2BUjJwaF2WhwbTrVZu%2BWPj%2F1QEJfVFhM5KDOr1rcoqh4XXbdMCFwo%2Bb7SnvKZ843jvLz%2B%2FqQnwLw%2B3inVomPpmLwPA%3D%3D","environmentVariables":{"ACCOUNTSID":"AC1c89a47bdd862ddd7712f6dd6226c750","AUTHTOKEN":"36d6d880edfed4a2c3c222665bd4b326","TWILIOPHONE":"447360494809","SERVICEAUCCOUNT":"/Users/zzz/Documents/Web/Buffalo_Signup/buffalosignup-firebase-adminsdk-vzmg9-32c9d7c073.json","APIKEY":"AIzaSyD-DMzW3I5eW0ZpYuGapBYQNEf5fRH_c4g","AUTHDOMAIN":"buffalosecuritysignup.firebaseapp.com","PROJECTID":"buffalosecuritysignup","STORAGEBUCKET":"buffalosecuritysignup.appspot.com","MESSAGINGSENDERID":"7353062754","APPID":"1:7353062754:web:840b98052fc1152a86c83b","MESSUREMENTID":"G-F307JKXFQ5","FIREBASE_CONFIG":"{\"projectId\":\"buffalosignup\",\"databaseURL\":\"https://buffalosignup-default-rtdb.firebaseio.com\",\"storageBucket\":\"buffalosignup.appspot.com\"}","GCLOUD_PROJECT":"buffalosignup","EVENTARC_CLOUD_EVENT_SOURCE":"projects/buffalosignup/locations/us-central1/functions/api"},"runtime":"nodejs18","buildEnvironmentVariables":{"GOOGLE_NODE_RUN_SCRIPTS":""},"dockerRegistry":"ARTIFACT_REGISTRY"},"versionId":"1","updateTime":"2023-06-21T10:45:53Z","buildId":"15b13bef-119d-4c70-834f-f7505295fd19","sourceToken":"2919da03-558f-4ea0-8a7d-d62c98c13402","buildName":"projects/414488218320/locations/us-central1/builds/15b13bef-119d-4c70-834f-f7505295fd19"},"done":true,"error":{"code":3,"message":"Function failed on loading user code. This is likely due to a bug in the user code. Error message: Provided module can't be loaded.\nDid you list all required modules in the package.json dependencies?\nDetailed stack trace: Error: Cannot find module '/Users/zzz/Documents/Web/Buffalo_Signup/buffalosignup-firebase-adminsdk-vzmg9-32c9d7c073.json'\nRequire stack:\n- /workspace/app.js\n- /layers/google.nodejs.functions-framework/functions-framework/node_modules/@google-cloud/functions-framework/build/src/loader.js\n- /layers/google.nodejs.functions-framework/functions-framework/node_modules/@google-cloud/functions-framework/build/src/main.js\n    at Module._resolveFilename (node:internal/modules/cjs/loader:1075:15)\n    at Module._load (node:internal/modules/cjs/loader:920:27)\n    at Module.require (node:internal/modules/cjs/loader:1141:19)\n    at require (node:internal/modules/cjs/helpers:110:18)\n    at Object.<anonymous> (/workspace/app.js:12:24)\n    at Module._compile (node:internal/modules/cjs/loader:1254:14)\n    at Module._extensions..js (node:internal/modules/cjs/loader:1308:10)\n    at Module.load (node:internal/modules/cjs/loader:1117:32)\n    at Module._load (node:internal/modules/cjs/loader:958:12)\n    at Module.require (node:internal/modules/cjs/loader:1141:19)\nCould not load the function, shutting down.. Please visit https://cloud.google.com/functions/docs/troubleshooting for in-depth troubleshooting documentation."}}
+[debug] [2023-06-21T10:45:54.575Z] Got source token 2919da03-558f-4ea0-8a7d-d62c98c13402 for region us-central1
+[error] Function failed on loading user code. This is likely due to a bug in the user code. Error message: Provided module can't be loaded.
+Did you list all required modules in the package.json dependencies?
+Detailed stack trace: Error: Cannot find module '/Users/zzz/Documents/Web/Buffalo_Signup/buffalosignup-firebase-adminsdk-vzmg9-32c9d7c073.json'
+Require stack:
+- /workspace/app.js
+- /layers/google.nodejs.functions-framework/functions-framework/node_modules/@google-cloud/functions-framework/build/src/loader.js
+- /layers/google.nodejs.functions-framework/functions-framework/node_modules/@google-cloud/functions-framework/build/src/main.js
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1075:15)
+    at Module._load (node:internal/modules/cjs/loader:920:27)
+    at Module.require (node:internal/modules/cjs/loader:1141:19)
+    at require (node:internal/modules/cjs/helpers:110:18)
+    at Object.<anonymous> (/workspace/app.js:12:24)
+    at Module._compile (node:internal/modules/cjs/loader:1254:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1308:10)
+    at Module.load (node:internal/modules/cjs/loader:1117:32)
+    at Module._load (node:internal/modules/cjs/loader:958:12)
+    at Module.require (node:internal/modules/cjs/loader:1141:19)
+Could not load the function, shutting down.. Please visit https://cloud.google.com/functions/docs/troubleshooting for in-depth troubleshooting documentation.
+[debug] [2023-06-21T10:45:54.588Z] Total Function Deployment time: 98694
+[debug] [2023-06-21T10:45:54.588Z] 1 Functions Deployed
+[debug] [2023-06-21T10:45:54.588Z] 1 Functions Errored
+[debug] [2023-06-21T10:45:54.588Z] 0 Function Deployments Aborted
+[debug] [2023-06-21T10:45:54.588Z] Average Function Deployment time: 98693
+[info] 
+[info] Functions deploy had errors with the following functions:
+	api(us-central1)
+[debug] [2023-06-21T10:45:54.623Z] Not printing URL for HTTPS function. Typically this means it didn't match a filter or we failed deployment
+[info] i  functions: cleaning up build files... 
+[debug] [2023-06-21T10:45:54.625Z] >>> [apiv2][query] DELETE https://artifactregistry.googleapis.com/v1beta2/projects/buffalosignup/locations/us-central1/repositories/gcf-artifacts/packages/api [none]
+[debug] [2023-06-21T10:45:54.626Z] >>> [apiv2][query] GET https://us.gcr.io/v2/buffalosignup/gcf/us-central1/tags/list [none]
+[debug] [2023-06-21T10:45:55.411Z] <<< [apiv2][status] DELETE https://artifactregistry.googleapis.com/v1beta2/projects/buffalosignup/locations/us-central1/repositories/gcf-artifacts/packages/api 200
+[debug] [2023-06-21T10:45:55.412Z] <<< [apiv2][body] DELETE https://artifactregistry.googleapis.com/v1beta2/projects/buffalosignup/locations/us-central1/repositories/gcf-artifacts/packages/api {"name":"projects/buffalosignup/locations/us-central1/operations/e063a11b-42b4-4ad9-8bfe-ba453b0361aa","metadata":{"@type":"type.googleapis.com/google.devtools.artifactregistry.v1beta2.OperationMetadata"}}
+[debug] [2023-06-21T10:45:55.413Z] >>> [apiv2][query] GET https://artifactregistry.googleapis.com/v1beta2/projects/buffalosignup/locations/us-central1/operations/e063a11b-42b4-4ad9-8bfe-ba453b0361aa [none]
+[debug] [2023-06-21T10:45:56.093Z] <<< [apiv2][status] GET https://artifactregistry.googleapis.com/v1beta2/projects/buffalosignup/locations/us-central1/operations/e063a11b-42b4-4ad9-8bfe-ba453b0361aa 200
+[debug] [2023-06-21T10:45:56.093Z] <<< [apiv2][body] GET https://artifactregistry.googleapis.com/v1beta2/projects/buffalosignup/locations/us-central1/operations/e063a11b-42b4-4ad9-8bfe-ba453b0361aa {"name":"projects/buffalosignup/locations/us-central1/operations/e063a11b-42b4-4ad9-8bfe-ba453b0361aa","metadata":{"@type":"type.googleapis.com/google.devtools.artifactregistry.v1beta2.OperationMetadata"},"done":true,"response":{"@type":"type.googleapis.com/google.protobuf.Empty"}}
+[debug] [2023-06-21T10:45:56.451Z] <<< [apiv2][status] GET https://us.gcr.io/v2/buffalosignup/gcf/us-central1/tags/list 200
+[debug] [2023-06-21T10:45:56.452Z] <<< [apiv2][body] GET https://us.gcr.io/v2/buffalosignup/gcf/us-central1/tags/list {"child":[],"manifest":{},"name":"buffalosignup/gcf/us-central1","tags":[]}
+[debug] [2023-06-21T10:45:56.453Z] Could not find image for function projects/buffalosignup/locations/us-central1/functions/api
+[debug] [2023-06-21T10:45:56.453Z] Functions deploy failed.
+[debug] [2023-06-21T10:45:56.454Z] {
+  "endpoint": {
+    "id": "api",
+    "project": "buffalosignup",
+    "region": "us-central1",
+    "entryPoint": "api",
+    "platform": "gcfv1",
+    "runtime": "nodejs18",
+    "httpsTrigger": {},
+    "serviceAccount": null,
+    "ingressSettings": null,
+    "availableMemoryMb": null,
+    "timeoutSeconds": null,
+    "maxInstances": null,
+    "minInstances": null,
+    "vpc": null,
+    "environmentVariables": {
+      "ACCOUNTSID": "AC1c89a47bdd862ddd7712f6dd6226c750",
+      "AUTHTOKEN": "36d6d880edfed4a2c3c222665bd4b326",
+      "TWILIOPHONE": "447360494809",
+      "SERVICEAUCCOUNT": "/Users/zzz/Documents/Web/Buffalo_Signup/buffalosignup-firebase-adminsdk-vzmg9-32c9d7c073.json",
+      "APIKEY": "AIzaSyD-DMzW3I5eW0ZpYuGapBYQNEf5fRH_c4g",
+      "AUTHDOMAIN": "buffalosecuritysignup.firebaseapp.com",
+      "PROJECTID": "buffalosecuritysignup",
+      "STORAGEBUCKET": "buffalosecuritysignup.appspot.com",
+      "MESSAGINGSENDERID": "7353062754",
+      "APPID": "1:7353062754:web:840b98052fc1152a86c83b",
+      "MESSUREMENTID": "G-F307JKXFQ5",
+      "FIREBASE_CONFIG": "{\"projectId\":\"buffalosignup\",\"databaseURL\":\"https://buffalosignup-default-rtdb.firebaseio.com\",\"storageBucket\":\"buffalosignup.appspot.com\"}",
+      "GCLOUD_PROJECT": "buffalosignup",
+      "EVENTARC_CLOUD_EVENT_SOURCE": "projects/buffalosignup/locations/us-central1/functions/api"
+    },
+    "codebase": "default",
+    "targetedByOnly": true,
+    "hash": "52b23f11b33e3c1ace7e6c821234c98e5d666386",
+    "labels": {
+      "deployment-tool": "cli-firebase"
+    }
+  },
+  "op": "create",
+  "original": {
+    "name": "FirebaseError",
+    "children": [],
+    "exit": 1,
+    "message": "Function failed on loading user code. This is likely due to a bug in the user code. Error message: Provided module can't be loaded.\nDid you list all required modules in the package.json dependencies?\nDetailed stack trace: Error: Cannot find module '/Users/zzz/Documents/Web/Buffalo_Signup/buffalosignup-firebase-adminsdk-vzmg9-32c9d7c073.json'\nRequire stack:\n- /workspace/app.js\n- /layers/google.nodejs.functions-framework/functions-framework/node_modules/@google-cloud/functions-framework/build/src/loader.js\n- /layers/google.nodejs.functions-framework/functions-framework/node_modules/@google-cloud/functions-framework/build/src/main.js\n    at Module._resolveFilename (node:internal/modules/cjs/loader:1075:15)\n    at Module._load (node:internal/modules/cjs/loader:920:27)\n    at Module.require (node:internal/modules/cjs/loader:1141:19)\n    at require (node:internal/modules/cjs/helpers:110:18)\n    at Object.<anonymous> (/workspace/app.js:12:24)\n    at Module._compile (node:internal/modules/cjs/loader:1254:14)\n    at Module._extensions..js (node:internal/modules/cjs/loader:1308:10)\n    at Module.load (node:internal/modules/cjs/loader:1117:32)\n    at Module._load (node:internal/modules/cjs/loader:958:12)\n    at Module.require (node:internal/modules/cjs/loader:1141:19)\nCould not load the function, shutting down.. Please visit https://cloud.google.com/functions/docs/troubleshooting for in-depth troubleshooting documentation.",
+    "status": 3,
+    "code": 3
+  }
+}
+[debug] [2023-06-21T10:45:56.491Z] Error: Failed to create function api in region us-central1
+    at /Users/zzz/Documents/Web/Buffalo_Signup/node_modules/firebase-tools/lib/deploy/functions/release/fabricator.js:51:11
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+    at async Fabricator.createV1Function (/Users/zzz/Documents/Web/Buffalo_Signup/node_modules/firebase-tools/lib/deploy/functions/release/fabricator.js:180:32)
+    at async Fabricator.createEndpoint (/Users/zzz/Documents/Web/Buffalo_Signup/node_modules/firebase-tools/lib/deploy/functions/release/fabricator.js:132:13)
+    at async handle (/Users/zzz/Documents/Web/Buffalo_Signup/node_modules/firebase-tools/lib/deploy/functions/release/fabricator.js:88:17)
+[error] 
+[error] Error: There was an error deploying functions

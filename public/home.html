@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <link rel="stylesheet" href="styles/homestyle.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+</head>
+<body>
+  <div class="text-container">
+    <div class="logo-container">
+      <img src="buffaloLogo.jpeg" alt="Logo" class="logo">
+    </div>
+    <div class="text">
+      <p>Terms and Conditions:<br><br>
+        By providing your phone number, name, and email address ("Personal Contact Information") to us, you agree to the following terms and conditions:</p>
+      <ol>
+        <li>Consent: You acknowledge and give your explicit consent for us to collect, store, and process your Personal Contact Information for the purposes described in these Terms and Conditions.</li>
+        <li>Purpose: We will only use your Personal Contact Information for the following purposes:<br>
+          a. Communication: To contact you regarding relevant updates, notifications, and inquiries related to our products, services, or any ongoing transactions.<br>
+          b. Account Management: To manage your account, including but not limited to, providing customer support, addressing technical issues, and facilitating any necessary administrative processes.<br>
+          c. Marketing: To send you promotional offers, newsletters, or other marketing materials that may be of interest to you, subject to your preferences and applicable laws and regulations.</li>
+        <li>Security Measures: We employ reasonable security measures to protect your Personal Contact Information from unauthorized access, disclosure, alteration, or destruction. However, please note that no data transmission or storage method is completely secure, and we cannot guarantee absolute security of your Personal Contact Information.</li>
+        <li>Data Retention: We will retain your Personal Contact Information only for as long as necessary to fulfill the purposes outlined in these Terms and Conditions, unless a longer retention period is required or permitted by law. Upon expiry of the retention period, we will securely dispose of or anonymize your Personal Contact Information.</li>
+        <li>Third-Party Disclosure: We will not sell, trade, rent, or otherwise transfer your Personal Contact Information to any third parties without your prior consent, except as required by law or as necessary to fulfill the purposes outlined in these Terms and Conditions.</li>
+        <li>Your Rights:<br>
+          a. Access and Rectification: You have the right to access and rectify any inaccurate or incomplete Personal Contact Information we hold about you.<br>
+          b. Withdrawal of Consent: You have the right to withdraw your consent for us to use your Personal Contact Information at any time. However, please note that such withdrawal may limit our ability to provide you with certain services or information.<br>
+          c. Data Erasure: You have the right to request the erasure of your Personal Contact Information from our records, subject to legal obligations or legitimate interests that require us to retain such data.</li>
+        <li>Amendments: We reserve the right to modify or amend these Terms and Conditions at any time. Any material changes will be communicated to you via the contact information provided by you or through other appropriate means. By continuing to use our services after such changes, you accept the modified Terms and Conditions.</li>
+        <li>Governing Law: These Terms and Conditions shall be governed by and construed in accordance with the laws of the jurisdiction where our company is located, without regard to its conflict of law principles.</li>
+      </ol>
+      <p>Please read these Terms and Conditions carefully before providing your Personal Contact Information. By providing your Personal Contact Information, you acknowledge that you have read, understood, and agreed to be bound by these Terms and Conditions.</p>
+    </div>
+    <div class="button">
+      <button id="acceptBtn" class="acceptBtn" onclick="accept()">Accept</button>
+      <button id="declineBtn" class="declineBtn" onclick="decline()">Decline</button>
+    </div>
+  </div>
+
+  <script>
+    function accept() {
+      window.location.href = "/";
+    }
+
+    function decline() {
+      window.location.href = "/home";
+    }
+  </script>
+</body>
+</html>

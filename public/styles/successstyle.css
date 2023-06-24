@@ -1,0 +1,20 @@
+* {
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.title {
+  text-align: center;
+  margin-top: 20%;
+}
+
+.text {
+  text-align: center;
+  color: #6e6e6e;
+}
+
+@media (max-width: 767px) {
+  .title
+   {
+    margin-top: 35vh;
+  }
+}

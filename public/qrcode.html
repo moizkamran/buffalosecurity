@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>QR Code Generator</title>
+
+  <link rel="stylesheet" href="styles/qrcodestyle.css">
+</head>
+<body>
+  <div id="qrcode-container"></div>
+  <button id="print-button" onclick="printQRCode()">Print</button>
+  <script src="https://cdn.jsdelivr.net/npm/qrcode-generator/qrcode.js"></script>
+  <script>
+
+function GetTime() {
+  var d = new Date();
+  var h = d.getHours();
+  var m = d.getMinutes();
+  var s = d.getMinutes();
+
+  console.log("Current Time: " + h + ":" + m + ":" + s);
+
+}
+
+    function generateQRCode() {
+      const qrcodeContainer = document.getElementById('qrcode-container');
+
+      // Generate a dynamic value for QR code content (e.g., current timestamp)
+      const qrCodeContent = '/users?timestamp=' + Date.now();
+      qrcodeContainer.innerHTML = '';
+
+      const qr = qrcode(0, 'M');
+      qr.addData(qrCodeContent);
+      qr.make();
+      const qrCodeImage = qr.createImgTag(10);
+      qrcodeContainer.innerHTML = qrCodeImage;
+
+      console.log("New QR Code Generated");
+    }
+
+    function printQRCode() {
+      window.print();
+    }
+
+    // Attach the generateQRCode function to the "load" event to generate a new QR code when the page is loaded
+    window.addEventListener('load', generateQRCode);
+  </script>
+</body>
+</html>

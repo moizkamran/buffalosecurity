@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Users List</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css">
+  <link rel="stylesheet" href="styles/usersstyle.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+</head>
+
+<body>
+  <div class="users-container">
+    <h1 class="users-header">Users List
+      <input type="date" id="filterDate">
+    </h1>
+    <div id="timeslotContainer"></div>
+  </div>
+
+  <p id="totalSignup"></p>
+  <p id="presentCount"></p>
+  <p id="absentCount"></p>
+
+  <script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-firestore.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+  <script>
+   const firebaseConfig = {
+  apiKey: "AIzaSyAK1-Yj36IcCD9_4F0DnD7Q3h-8XJhcHSM",
+  authDomain: "buffalosignup.firebaseapp.com",
+  projectId: "buffalosignup",
+  storageBucket: "buffalosignup.appspot.com",
+  messagingSenderId: "414488218320",
+  appId: "1:414488218320:web:b52b8a76d3cc03239cecd5"
+};
+
+firebase.initializeApp(firebaseConfig);
+const db = firebase.firestore();
+
+const timeslotContainer = document.getElementById('timeslotContainer');
+const totalSignupParagraph = document.getElementById('totalSignup');
+const presentCountParagraph = document.getElementById('presentCount');
+const absentCountParagraph = document.getElementById('absentCount');
+
+function renderUsers(users) {
+  timeslotContainer.innerHTML = '';
+  const filterDate = document.getElementById('filterDate').value;
+
+  // Create a map to hold timeslot as the key and users as the value
+  const timeslotMap = new Map();
+
+  users.forEach((user) => {
+    const { name, email, phone, timeslot, people, present } = user.data();
+
+    // Extract the date part from the timestamp
+    const userDate = user.date;
+
+    // Check if the user's date matches the selected date
+    if (!filterDate || userDate === filterDate) {
+      if (timeslotMap.has(timeslot)) {
+        // If timeslot exists in the map, add the user to the existing timeslot
+        timeslotMap.get(timeslot).push(user);
+      } else {
+        // If timeslot doesn't exist in the map, create a new array and add the user
+        timeslotMap.set(timeslot, [user]);
+      }
+    }
+  });
+
+  // Sort the timeslots in ascending order
+  const sortedTimeslots = Array.from(timeslotMap.keys()).sort();
+
+  // Iterate over the sorted timeslots and create a box for each timeslot
+  sortedTimeslots.forEach((timeslot) => {
+    const usersInTimeslot = timeslotMap.get(timeslot);
+
+    const timeslotBox = document.createElement('div');
+    timeslotBox.classList.add('timeslot-box');
+
+    const timeslotHeading = document.createElement('h4');
+    timeslotHeading.className = "timeslotTitle";
+    timeslotHeading.textContent = `Timeslot: ${timeslot}`;
+    timeslotBox.appendChild(timeslotHeading);
+
+    // Sort the users' names in alphabetical order
+    const sortedUsers = usersInTimeslot.sort((a, b) => {
+      const nameA = a.data().name.toUpperCase();
+      const nameB = b.data().name.toUpperCase();
+      if (nameA < nameB) {
+        return -1;
+      }
+      if (nameA > nameB) {
+        return 1;
+      }
+      return 0;
+    });
+
+    sortedUsers.forEach((user) => {
+      const { name, email, phone, people, present, countrycode } = user.data();
+
+      const userContainer = document.createElement('div');
+      userContainer.classList.add('user-container');
+
+      const nameButton = document.createElement('button');
+      nameButton.classList.add('users-button');
+      userContainer.appendChild(nameButton);
+
+      const nameText = document.createElement('span');
+      nameText.classList.add('name-text');
+      nameText.textContent = name;
+      nameButton.appendChild(nameText);
+
+      const tickBox = document.createElement('div');
+      tickBox.classList.add('tick');
+      nameButton.appendChild(tickBox); /* Append tickBox to nameButton */
+
+      const contentDiv = document.createElement('div');
+      contentDiv.classList.add('users-content');
+      userContainer.appendChild(contentDiv);
+
+      const emailParagraph = document.createElement('p');
+      emailParagraph.innerHTML = 'Email: <span>' + email + '</span>';
+      emailParagraph.className = "emailtext";
+      contentDiv.appendChild(emailParagraph);
+
+      const phoneParagraph = document.createElement('p');
+      phoneParagraph.innerHTML = 'Phone: <span>' + countrycode + phone + '</span>';
+      phoneParagraph.className = "phonetext";
+      contentDiv.appendChild(phoneParagraph);
+
+      const peopleParagraph = document.createElement('p');
+      peopleParagraph.innerHTML = 'People: <span>' + people + '</span>';
+      peopleParagraph.className = "peopletext"
+      contentDiv.appendChild(peopleParagraph);
+
+      const numberInputContainer = document.createElement('div');
+      numberInputContainer.className = "number-input-container";
+      contentDiv.appendChild(numberInputContainer);
+
+      const minParagraph = document.createElement('p');
+      minParagraph.innerHTML = 'How many minutes?';
+      minParagraph.className = 'mintext'
+      numberInputContainer.appendChild(minParagraph);
+
+      const numberInputDiv = document.createElement('div');
+      numberInputDiv.className = "number-input";
+      numberInputContainer.appendChild(numberInputDiv);
+
+
+      const decreaseButton = document.createElement('button');
+      decreaseButton.className = "decrease-btn";
+      decreaseButton.textContent = "−";
+      decreaseButton.onclick = () => decreaseValue(userContainer);
+      numberInputDiv.appendChild(decreaseButton);
+
+
+
+      const input = document.createElement('input');
+      input.type = "number";
+      input.className = "time-duration";
+      input.min = "0";
+      input.max = "15";
+      input.value = "1";
+      numberInputDiv.appendChild(input);
+
+
+      const increaseButton = document.createElement('button');
+      increaseButton.className = "increase-btn";
+      increaseButton.textContent = "+";
+      increaseButton.onclick = () => increaseValue(userContainer);
+      numberInputDiv.appendChild(increaseButton);
+
+
+      const sendTextButton = document.createElement('button');
+      sendTextButton.classList.add('send-text-button');
+      sendTextButton.textContent = 'Send Text';
+      contentDiv.appendChild(sendTextButton);
+
+      // Set the initial state of the tick box based on the 'present' field in the database
+      if (present) {
+        tickBox.classList.add('selected');
+      }
+
+      tickBox.addEventListener('click', (event) => {
+        event.stopPropagation(); // Prevent event propagation to the button
+        tickBox.classList.toggle('selected');
+
+        // Save the state of the tick box to the database
+        const userId = user.id;
+        const userRef = db.collection('users').doc(userId);
+        userRef.update({
+          present: tickBox.classList.contains('selected')
+        })
+          .then(() => {
+            console.log('Tick box state saved to the database.');
+          })
+          .catch((error) => {
+            console.error('Error saving tick box state to the database:', error);
+          });
+      });
+
+      nameButton.addEventListener('click', (event) => {
+        event.stopPropagation(); // Prevent event propagation to the tick box
+        if (contentDiv.style.maxHeight === '0px') {
+          contentDiv.style.maxHeight = contentDiv.scrollHeight + 'px';
+          nameButton.style.marginBottom = '10px';
+        } else {
+          contentDiv.style.maxHeight = '0px';
+          nameButton.style.marginBottom = '0px';
+        }
+      });
+
+      sendTextButton.addEventListener('click', (event) => {
+        event.stopPropagation(); // Prevent event propagation to the parent elements
+
+        const phoneNumber = phone;
+        const userId = user.id; // Add this line to retrieve the userId
+        const timeDuration = parseInt(input.value);
+        let message = "";
+
+        if (timeDuration <= 1) {
+          message = "Good news, there is a free spot available for you right now !!";
+        } else {
+          message = `You can come in ${timeDuration} min`;
+        }
+
+        $.ajax({
+          url: '/sendText',
+          method: 'POST',
+          data: { phoneNumber: phoneNumber, userId: userId, message: message }, // Include the userId and message in the request data
+          success: function (response) {
+            console.log('Text message sent successfully.');
+          },
+          error: function (xhr, status, error) {
+            console.error('Failed to send text message:', error);
+          }
+        });
+      });
+
+      timeslotBox.appendChild(userContainer);
+    });
+
+    timeslotContainer.appendChild(timeslotBox);
+  });
+
+  // Calculate the number of users for the selected date
+  const filteredUsers = users.filter(user => user.date === filterDate);
+  const totalUsers = filteredUsers.length;
+
+  // Add paragraph to display the total number of users signed up on that day
+  const totalUsersParagraph = document.createElement('p');
+  totalUsersParagraph.textContent = `Total users signed up on ${filterDate}: ${totalUsers}`;
+  timeslotContainer.appendChild(totalUsersParagraph);
+
+  // Count the number of present and not present users for the selected date
+  let presentCount = 0;
+  let notPresentCount = 0;
+
+  filteredUsers.forEach((user) => {
+    const { present } = user.data();
+    if (present) {
+      presentCount++;
+    } else {
+      notPresentCount++;
+    }
+  });
+
+  // Add paragraph to display the number of present users
+  const presentUsersParagraph = document.createElement('p');
+  presentUsersParagraph.textContent = `Present: ${presentCount}`;
+  timeslotContainer.appendChild(presentUsersParagraph);
+
+  // Add paragraph to display the number of not present users
+  const notPresentUsersParagraph = document.createElement('p');
+  notPresentUsersParagraph.textContent = `Not Present: ${notPresentCount}`;
+  timeslotContainer.appendChild(notPresentUsersParagraph);
+}
+
+const filterDateInput = document.getElementById('filterDate');
+
+// Set the filterDate input to today's date
+const today = new Date().toISOString().split('T')[0];
+filterDateInput.value = today;
+
+filterDateInput.addEventListener('change', () => {
+  const filterDate = filterDateInput.value;
+
+  // Retrieve users from Firebase and filter by date
+  db.collection('users')
+    .get()
+    .then((querySnapshot) => {
+      const users = [];
+      querySnapshot.forEach((doc) => {
+        const userData = doc.data();
+        const user = { id: doc.id, date: userData.timestamp.split(' ')[0], data: () => userData };
+        users.push(user);
+      });
+      renderUsers(users, filterDate);
+    })
+    .catch((error) => {
+      console.error('Error retrieving users:', error);
+    });
+});
+
+// Retrieve users from Firebase and render them initially
+db.collection('users')
+  .get()
+  .then((querySnapshot) => {
+    const users = [];
+    querySnapshot.forEach((doc) => {
+      const userData = doc.data();
+      const user = { id: doc.id, date: userData.timestamp.split(' ')[0], data: () => userData };
+      users.push(user);
+    });
+    renderUsers(users, today);
+  })
+  .catch((error) => {
+    console.error('Error retrieving users:', error);
+  });
+
+function decreaseValue(userContainer) {
+  const input = userContainer.querySelector('.time-duration');
+  if (parseInt(input.value) > 1) {
+    input.value = parseInt(input.value) - 1;
+  }
+}
+
+function increaseValue(userContainer) {
+  const input = userContainer.querySelector('.time-duration');
+  if (parseInt(input.value) < 15) {
+    input.value = parseInt(input.value) + 1;
+  }
+}
+
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Signup Form</title>
+  <link rel="stylesheet" href="styles/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+</head>
+<body>
+  <div class="form-container">
+    <h2 class="users-header">Signup</h2>
+    <form action="/submit" method="POST">
+      <label class="form-label" for="name">Name:</label>
+      <input class="form-input" type="text" id="name" name="name" required><br><br>
+      <label class="form-label" for="email">Email:</label>
+      <input class="form-input" type="email" id="email" name="email" required><br><br>
+
+      <div class="phone-container">
+        <div class="countrycode-container">
+          <label class="form-label" id="countrycodelabel" for="countrycode">Phone:</label>
+          <div class="countrycode-dropdown">
+            <select class="form-input" id="countrycode" name="countrycode" required>
+              <option value="Country Code" >Country Code</option>
+              <option value="+93" data-countrycode="AF">+93 🇦🇫</option>
+              <option value="+355" data-countrycode="AL">+355 🇦🇱</option>
+              <option value="+213" data-countrycode="DZ">+213 🇩🇿</option>
+              <option value="+1" data-countrycode="AS">+1 🇦🇸</option>
+              <option value="+376" data-countrycode="AD">+376 🇦🇩</option>
+              <option value="+244" data-countrycode="AO">+244 🇦🇴</option>
+              <option value="+1" data-countrycode="AI">+1 🇦🇮</option>
+              <option value="+1" data-countrycode="AG">+1 🇦🇬</option>
+              <option value="+54" data-countrycode="AR">+54 🇦🇷</option>
+              <option value="+374" data-countrycode="AM">+374 🇦🇲</option>
+              <option value="+297" data-countrycode="AW">+297 🇦🇼</option>
+              <option value="+61" data-countrycode="AU">+61 🇦🇺</option>
+              <option value="+43" data-countrycode="AT">+43 🇦🇹</option>
+              <option value="+994" data-countrycode="AZ">+994 🇦🇿</option>
+              <option value="+1" data-countrycode="BS">+1 🇧🇸</option>
+              <option value="+973" data-countrycode="BH">+973 🇧🇭</option>
+              <option value="+880" data-countrycode="BD">+880 🇧🇩</option>
+              <option value="+1" data-countrycode="BB">+1 🇧🇧</option>
+              <option value="+375" data-countrycode="BY">+375 🇧🇾</option>
+              <option value="+32" data-countrycode="BE">+32 🇧🇪</option>
+              <option value="+501" data-countrycode="BZ">+501 🇧🇿</option>
+              <option value="+229" data-countrycode="BJ">+229 🇧🇯</option>
+              <option value="+1" data-countrycode="BM">+1 🇧🇲</option>
+              <option value="+975" data-countrycode="BT">+975 🇧🇹</option>
+              <option value="+591" data-countrycode="BO">+591 🇧🇴</option>
+              <option value="+387" data-countrycode="BA">+387 🇧🇦</option>
+              <option value="+267" data-countrycode="BW">+267 🇧🇼</option>
+              <option value="+55" data-countrycode="BR">+55 🇧🇷</option>
+              <option value="+246" data-countrycode="IO">+246 🇮🇴</option>
+              <option value="+1" data-countrycode="VG">+1 🇻🇬</option>
+              <option value="+673" data-countrycode="BN">+673 🇧🇳</option>
+              <option value="+359" data-countrycode="BG">+359 🇧🇬</option>
+              <option value="+226" data-countrycode="BF">+226 🇧🇫</option>
+              <option value="+257" data-countrycode="BI">+257 🇧🇮</option>
+              <option value="+855" data-countrycode="KH">+855 🇰🇭</option>
+              <option value="+237" data-countrycode="CM">+237 🇨🇲</option>
+              <option value="+1" data-countrycode="CA">+1 🇨🇦</option>
+              <option value="+238" data-countrycode="CV">+238 🇨🇻</option>
+              <option value="+1" data-countrycode="KY">+1 🇰🇾</option>
+              <option value="+236" data-countrycode="CF">+236 🇨🇫</option>
+              <option value="+235" data-countrycode="TD">+235 🇹🇩</option>
+              <option value="+56" data-countrycode="CL">+56 🇨🇱</option>
+              <option value="+86" data-countrycode="CN">+86 🇨🇳</option>
+              <option value="+57" data-countrycode="CO">+57 🇨🇴</option>
+              <option value="+269" data-countrycode="KM">+269 🇰🇲</option>
+              <option value="+682" data-countrycode="CK">+682 🇨🇰</option>
+              <option value="+506" data-countrycode="CR">+506 🇨🇷</option>
+              <option value="+385" data-countrycode="HR">+385 🇭🇷</option>
+              <option value="+53" data-countrycode="CU">+53 🇨🇺</option>
+              <option value="+599" data-countrycode="CW">+599 🇨🇼</option>
+              <option value="+537" data-countrycode="CY">+537 🇨🇾</option>
+              <option value="+420" data-countrycode="CZ">+420 🇨🇿</option>
+              <option value="+243" data-countrycode="CD">+243 🇨🇩</option>
+              <option value="+45" data-countrycode="DK">+45 🇩🇰</option>
+              <option value="+253" data-countrycode="DJ">+253 🇩🇯</option>
+              <option value="+1" data-countrycode="DM">+1 🇩🇲</option>
+              <option value="+1" data-countrycode="DO">+1 🇩🇴</option>
+              <option value="+670" data-countrycode="TL">+670 🇹🇱</option>
+              <option value="+593" data-countrycode="EC">+593 🇪🇨</option>
+              <option value="+20" data-countrycode="EG">+20 🇪🇬</option>
+              <option value="+503" data-countrycode="SV">+503 🇸🇻</option>
+              <option value="+240" data-countrycode="GQ">+240 🇬🇶</option>
+              <option value="+291" data-countrycode="ER">+291 🇪🇷</option>
+              <option value="+372" data-countrycode="EE">+372 🇪🇪</option>
+              <option value="+251" data-countrycode="ET">+251 🇪🇹</option>
+              <option value="+500" data-countrycode="FK">+500 🇫🇰</option>
+              <option value="+298" data-countrycode="FO">+298 🇫🇴</option>
+              <option value="+679" data-countrycode="FJ">+679 🇫🇯</option>
+              <option value="+358" data-countrycode="FI">+358 🇫🇮</option>
+              <option value="+33" data-countrycode="FR">+33 🇫🇷</option>
+              <option value="+594" data-countrycode="GF">+594 🇬🇫</option>
+              <option value="+689" data-countrycode="PF">+689 🇵🇫</option>
+              <option value="+241" data-countrycode="GA">+241 🇬🇦</option>
+              <option value="+220" data-countrycode="GM">+220 🇬🇲</option>
+              <option value="+995" data-countrycode="GE">+995 🇬🇪</option>
+              <option value="+49" data-countrycode="DE">+49 🇩🇪</option>
+              <option value="+233" data-countrycode="GH">+233 🇬🇭</option>
+              <option value="+350" data-countrycode="GI">+350 🇬🇮</option>
+              <option value="+30" data-countrycode="GR">+30 🇬🇷</option>
+              <option value="+299" data-countrycode="GL">+299 🇬🇱</option>
+              <option value="+1" data-countrycode="GD">+1 🇬🇩</option>
+              <option value="+590" data-countrycode="GP">+590 🇬🇵</option>
+              <option value="+1" data-countrycode="GU">+1 🇬🇺</option>
+              <option value="+502" data-countrycode="GT">+502 🇬🇹</option>
+              <option value="+224" data-countrycode="GN">+224 🇬🇳</option>
+              <option value="+245" data-countrycode="GW">+245 🇬🇼</option>
+              <option value="+592" data-countrycode="GY">+592 🇬🇾</option>
+              <option value="+509" data-countrycode="HT">+509 🇭🇹</option>
+              <option value="+504" data-countrycode="HN">+504 🇭🇳</option>
+              <option value="+852" data-countrycode="HK">+852 🇭🇰</option>
+              <option value="+36" data-countrycode="HU">+36 🇭🇺</option>
+              <option value="+354" data-countrycode="IS">+354 🇮🇸</option>
+              <option value="+91" data-countrycode="IN">+91 🇮🇳</option>
+              <option value="+62" data-countrycode="ID">+62 🇮🇩</option>
+              <option value="+98" data-countrycode="IR">+98 🇮🇷</option>
+              <option value="+964" data-countrycode="IQ">+964 🇮🇶</option>
+              <option value="+353" data-countrycode="IE">+353 🇮🇪</option>
+              <option value="+972" data-countrycode="IL">+972 🇮🇱</option>
+              <option value="+39" data-countrycode="IT">+39 🇮🇹</option>
+              <option value="+225" data-countrycode="CI">+225 🇨🇮</option>
+              <option value="+1" data-countrycode="JM">+1 🇯🇲</option>
+              <option value="+81" data-countrycode="JP">+81 🇯🇵</option>
+              <option value="+962" data-countrycode="JO">+962 🇯🇴</option>
+              <option value="+7" data-countrycode="KZ">+7 🇰🇿</option>
+              <option value="+254" data-countrycode="KE">+254 🇰🇪</option>
+              <option value="+686" data-countrycode="KI">+686 🇰🇮</option>
+              <option value="+965" data-countrycode="KW">+965 🇰🇼</option>
+              <option value="+996" data-countrycode="KG">+996 🇰🇬</option>
+              <option value="+856" data-countrycode="LA">+856 🇱🇦</option>
+              <option value="+371" data-countrycode="LV">+371 🇱🇻</option>
+              <option value="+961" data-countrycode="LB">+961 🇱🇧</option>
+              <option value="+266" data-countrycode="LS">+266 🇱🇸</option>
+              <option value="+231" data-countrycode="LR">+231 🇱🇷</option>
+              <option value="+218" data-countrycode="LY">+218 🇱🇾</option>
+              <option value="+423" data-countrycode="LI">+423 🇱🇮</option>
+              <option value="+370" data-countrycode="LT">+370 🇱🇹</option>
+              <option value="+352" data-countrycode="LU">+352 🇱🇺</option>
+              <option value="+853" data-countrycode="MO">+853 🇲🇴</option>
+              <option value="+389" data-countrycode="MK">+389 🇲🇰</option>
+              <option value="+261" data-countrycode="MG">+261 🇲🇬</option>
+              <option value="+265" data-countrycode="MW">+265 🇲🇼</option>
+              <option value="+60" data-countrycode="MY">+60 🇲🇾</option>
+              <option value="+960" data-countrycode="MV">+960 🇲🇻</option>
+              <option value="+223" data-countrycode="ML">+223 🇲🇱</option>
+              <option value="+356" data-countrycode="MT">+356 🇲🇹</option>
+              <option value="+692" data-countrycode="MH">+692 🇲🇭</option>
+              <option value="+596" data-countrycode="MQ">+596 🇲🇶</option>
+              <option value="+222" data-countrycode="MR">+222 🇲🇷</option>
+              <option value="+230" data-countrycode="MU">+230 🇲🇺</option>
+              <option value="+262" data-countrycode="YT">+262 🇾🇹</option>
+              <option value="+52" data-countrycode="MX">+52 🇲🇽</option>
+              <option value="+691" data-countrycode="FM">+691 🇫🇲</option>
+              <option value="+373" data-countrycode="MD">+373 🇲🇩</option>
+              <option value="+377" data-countrycode="MC">+377 🇲🇨</option>
+              <option value="+976" data-countrycode="MN">+976 🇲🇳</option>
+              <option value="+382" data-countrycode="ME">+382 🇲🇪</option>
+              <option value="+1" data-countrycode="MS">+1 🇲🇸</option>
+              <option value="+212" data-countrycode="MA">+212 🇲🇦</option>
+              <option value="+258" data-countrycode="MZ">+258 🇲🇿</option>
+              <option value="+95" data-countrycode="MM">+95 🇲🇲</option>
+              <option value="+264" data-countrycode="NA">+264 🇳🇦</option>
+              <option value="+674" data-countrycode="NR">+674 🇳🇷</option>
+              <option value="+977" data-countrycode="NP">+977 🇳🇵</option>
+              <option value="+31" data-countrycode="NL">+31 🇳🇱</option>
+              <option value="+599" data-countrycode="AN">+599 🇧🇶</option>
+              <option value="+687" data-countrycode="NC">+687 🇳🇨</option>
+              <option value="+64" data-countrycode="NZ">+64 🇳🇿</option>
+              <option value="+505" data-countrycode="NI">+505 🇳🇮</option>
+              <option value="+227" data-countrycode="NE">+227 🇳🇪</option>
+              <option value="+234" data-countrycode="NG">+234 🇳🇬</option>
+              <option value="+683" data-countrycode="NU">+683 🇳🇺</option>
+              <option value="+672" data-countrycode="NF">+672 🇳🇫</option>
+              <option value="+1" data-countrycode="MP">+1 🇲🇵</option>
+              <option value="+47" data-countrycode="NO">+47 🇳🇴</option>
+              <option value="+968" data-countrycode="OM">+968 🇴🇲</option>
+              <option value="+92" data-countrycode="PK">+92 🇵🇰</option>
+              <option value="+680" data-countrycode="PW">+680 🇵🇼</option>
+              <option value="+970" data-countrycode="PS">+970 🇵🇸</option>
+              <option value="+507" data-countrycode="PA">+507 🇵🇦</option>
+              <option value="+675" data-countrycode="PG">+675 🇵🇬</option>
+              <option value="+595" data-countrycode="PY">+595 🇵🇾</option>
+              <option value="+51" data-countrycode="PE">+51 🇵🇪</option>
+              <option value="+63" data-countrycode="PH">+63 🇵🇭</option>
+              <option value="+48" data-countrycode="PL">+48 🇵🇱</option>
+              <option value="+351" data-countrycode="PT">+351 🇵🇹</option>
+              <option value="+1" data-countrycode="PR">+1 🇵🇷</option>
+              <option value="+974" data-countrycode="QA">+974 🇶🇦</option>
+              <option value="+262" data-countrycode="RE">+262 🇷🇪</option>
+              <option value="+40" data-countrycode="RO">+40 🇷🇴</option>
+              <option value="+7" data-countrycode="RU">+7 🇷🇺</option>
+              <option value="+250" data-countrycode="RW">+250 🇷🇼</option>
+              <option value="+685" data-countrycode="WS">+685 🇼🇸</option>
+              <option value="+378" data-countrycode="SM">+378 🇸🇲</option>
+              <option value="+239" data-countrycode="ST">+239 🇸🇹</option>
+              <option value="+966" data-countrycode="SA">+966 🇸🇦</option>
+              <option value="+221" data-countrycode="SN">+221 🇸🇳</option>
+              <option value="+381" data-countrycode="RS">+381 🇷🇸</option>
+              <option value="+248" data-countrycode="SC">+248 🇸🇨</option>
+              <option value="+232" data-countrycode="SL">+232 🇸🇱</option>
+              <option value="+65" data-countrycode="SG">+65 🇸🇬</option>
+              <option value="+421" data-countrycode="SK">+421 🇸🇰</option>
+              <option value="+386" data-countrycode="SI">+386 🇸🇮</option>
+              <option value="+677" data-countrycode="SB">+677 🇸🇧</option>
+              <option value="+252" data-countrycode="SO">+252 🇸🇴</option>
+              <option value="+27" data-countrycode="ZA">+27 🇿🇦</option>
+              <option value="+82" data-countrycode="KR">+82 🇰🇷</option>
+              <option value="+211" data-countrycode="SS">+211 🇸🇸</option>
+              <option value="+34" data-countrycode="ES">+34 🇪🇸</option>
+              <option value="+94" data-countrycode="LK">+94 🇱🇰</option>
+              <option value="+249" data-countrycode="SD">+249 🇸🇩</option>
+              <option value="+597" data-countrycode="SR">+597 🇸🇷</option>
+              <option value="+268" data-countrycode="SZ">+268 🇸🇿</option>
+              <option value="+46" data-countrycode="SE">+46 🇸🇪</option>
+              <option value="+41" data-countrycode="CH">+41 🇨🇭</option>
+              <option value="+963" data-countrycode="SY">+963 🇸🇾</option>
+              <option value="+886" data-countrycode="TW">+886 🇹🇼</option>
+              <option value="+992" data-countrycode="TJ">+992 🇹🇯</option>
+              <option value="+255" data-countrycode="TZ">+255 🇹🇿</option>
+              <option value="+66" data-countrycode="TH">+66 🇹🇭</option>
+              <option value="+228" data-countrycode="TG">+228 🇹🇬</option>
+              <option value="+690" data-countrycode="TK">+690 🇹🇰</option>
+              <option value="+676" data-countrycode="TO">+676 🇹🇴</option>
+              <option value="+1" data-countrycode="TT">+1 🇹🇹</option>
+              <option value="+216" data-countrycode="TN">+216 🇹🇳</option>
+              <option value="+90" data-countrycode="TR">+90 🇹🇷</option>
+              <option value="+993" data-countrycode="TM">+993 🇹🇲</option>
+              <option value="+1" data-countrycode="TC">+1 🇹🇨</option>
+              <option value="+688" data-countrycode="TV">+688 🇹🇻</option>
+              <option value="+1" data-countrycode="VI">+1 🇻🇮</option>
+              <option value="+256" data-countrycode="UG">+256 🇺🇬</option>
+              <option value="+380" data-countrycode="UA">+380 🇺🇦</option>
+              <option value="+971" data-countrycode="AE">+971 🇦🇪</option>
+              <option value="+44" data-countrycode="GB">+44 🇬🇧</option>
+              <option value="+1" data-countrycode="US">+1 🇺🇸</option>
+              <option value="+598" data-countrycode="UY">+598 🇺🇾</option>
+              <option value="+998" data-countrycode="UZ">+998 🇺🇿</option>
+              <option value="+678" data-countrycode="VU">+678 🇻🇺</option>
+              <option value="+379" data-countrycode="VA">+379 🇻🇦</option>
+              <option value="+58" data-countrycode="VE">+58 🇻🇪</option>
+              <option value="+84" data-countrycode="VN">+84 🇻🇳</option>
+              <option value="+681" data-countrycode="WF">+681 🇼🇫</option>
+              <option value="+967" data-countrycode="YE">+967 🇾🇪</option>
+              <option value="+260" data-countrycode="ZM">+260 🇿🇲</option>
+              <option value="+263" data-countrycode="ZW">+263 🇿🇼</option>
+            </select>
+          </div>
+        </div>
+        <div class="phone-input-container">
+          <label class="form-label" id="phonelabel" for="phone"></label>
+          <input class="form-input" type="tel" id="phone" name="phone" required>
+        </div>
+      </div>
+      <br><br>
+
+      <label class="form-label" for="people">Number of People:</label>
+      <select class="form-input" type="number" id="people" name="people" required>
+        <option value="">Amount of people</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+      </select><br><br>
+
+      <label class="form-label" for="timeslot">Timeslot:</label>
+      <select class="form-input" id="timeslot" name="timeslot" required>
+        <option value="">Select a timeslot</option>
+        <option value="11:00">11:00</option>
+        <option value="11:15">11:15</option>
+        <option value="11:30">11:30</option>
+        <option value="11:45">11:45</option>
+
+        <option value="12:00">12:00</option>
+        <option value="12:15">12:15</option>
+        <option value="12:30">12:30</option>
+        <option value="12:45">12:45</option>
+
+        <option value="13:00">13:00</option>
+        <option value="13:15">13:15</option>
+        <option value="13:30">13:30</option>
+        <option value="13:45">13:45</option>
+
+        <option value="14:00">14:00</option>
+        <option value="14:15">14:15</option>
+        <option value="14:30">14:30</option>
+        <option value="14:45">14:45</option>
+
+        <option value="15:00">15:00</option>
+        <option value="15:15">15:15</option>
+        <option value="15:30">15:30</option>
+        <option value="15:45">15:45</option>
+
+        <option value="16:00">16:00</option>
+        <option value="16:15">16:15</option>
+        <option value="16:30">16:30</option>
+        <option value="16:45">16:45</option>
+
+        <option value="17:00">17:00</option>
+        <option value="17:15">17:15</option>
+        <option value="17:30">17:30</option>
+        <option value="17:45">17:45</option>
+
+        <option value="18:00">18:00</option>
+        <option value="18:15">18:15</option>
+        <option value="18:30">18:30</option>
+        <option value="18:45">18:45</option>
+      </select><br><br>
+
+      <button class="form-submit" type="submit">Submit</button>
+    </form>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
+
+  <script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.20.0/firebase-firestore.js"></script>
+
+  <script>
+         var firebaseConfig = {
+    apiKey: "AIzaSyAK1-Yj36IcCD9_4F0DnD7Q3h-8XJhcHSM",
+    authDomain: "buffalosignup.firebaseapp.com",
+    projectId: "buffalosignup",
+    storageBucket: "buffalosignup.appspot.com",
+    messagingSenderId: "414488218320",
+    appId: "1:414488218320:web:b52b8a76d3cc03239cecd5"
+  };
+
+  // Initialize Firebase app
+  firebase.initializeApp(firebaseConfig);
+
+  // Get a reference to the Firestore database
+  var db = firebase.firestore();
+
+  // Retrieve timeslotCounts from Firestore
+  db.collection("global").doc("timeslotCounts").get().then(function(doc) {
+    if (doc.exists) {
+      var timeslotCounts = doc.data();
+
+      // Disable timeslot options based on timeslotCounts
+      $.each(timeslotCounts, function(key, value) {
+        if (value >= 3) {
+          $('#timeslot option[value="' + key + '"]').prop('disabled', true);
+        }
+      });
+    } else {
+      console.log("No timeslotCounts document found");
+    }
+  }).catch(function(error) {
+    console.log("Error getting timeslotCounts:", error);
+  });
+
+  $(document).ready(function() {
+  $('#countrycode').select2();
+
+  $('form').on('submit', function(event) {
+    event.preventDefault(); // Prevent the form from submitting normally
+
+    // Perform an AJAX post request
+    $.ajax({
+      url: '/submit',
+      type: 'POST',
+      data: $(this).serialize(), // Serialize the form data
+      success: function(response) {
+        console.log('Form submitted successfully');
+        // Add Twilio API call to send SMS confirmation here
+        $.ajax({
+          url: '/sendSMS',
+          type: 'POST',
+          data: $(this).serialize(),
+          success: function(response) {
+            console.log('SMS confirmation sent successfully');
+          },
+          error: function(error) {
+            console.error('Error sending SMS confirmation:', error);
+            // Handle error cases if necessary
+          },
+          complete: function() {
+            // Redirect to the success page after a delay
+            setTimeout(function() {
+              window.location.href = '/success';
+            }, 200); // Delay of 2 seconds before redirecting
+          }
+        });
+      },
+      error: function(error) {
+        console.error('Error submitting form:', error);
+        setTimeout(function() {
+              window.location.href = '/success';
+            }, 200);
+      }
+    });
+  });
+});
+  </script>
+</body>
+</html>
